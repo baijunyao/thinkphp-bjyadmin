@@ -79,6 +79,3 @@ return array(
         '/Upload/video',
         ),
 );
-foreach ($variable as $key => $value) {
-    # code...
-}
