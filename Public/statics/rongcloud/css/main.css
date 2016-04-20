@@ -1,0 +1,244 @@
+#bjy-chat-modal .modal-dialog {
+  width: 710px;
+  height: 570px;
+  margin-top: 80px;
+}
+#bjy-chat-modal .modal-dialog .modal-content {
+  width: 710px;
+  height: 570px;
+  border-radius: 0;
+  border: none;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top {
+  width: 710px;
+  height: 45px;
+  background: #00ccc0;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top .bjy-t-myinfo {
+  padding-left: 85px;
+  width: 220px;
+  height: 45px;
+  line-height: 45px;
+  font-weight: 600;
+  font-size: 14px;
+  float: left;
+  position: relative;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top .bjy-t-myinfo .bjy-t-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: -20px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top .bjy-t-title {
+  width: 490px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  float: left;
+  font-size: 14px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top .bjy-t-title .bjy-tt-name {
+  font-weight: 600;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-top .bjy-t-title .bjy-tt-close {
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  background: url('/tpl/default/User/Public/images/f-x.png') no-repeat;
+  float: right;
+  cursor: pointer;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat {
+  width: 710px;
+  height: 525px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list {
+  width: 220px;
+  height: 525px;
+  float: left;
+  background: url(/Public/statics/rongcloud/images/bg_left.min.png);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one {
+  padding: 15px 5px 15px 10px;
+  width: 220px;
+  height: 65px;
+  border-bottom: 2px solid #C3E8F0;
+  cursor: pointer;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-avatar {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  float: left;
+  position: relative;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-avatar .bjy-floa-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 3px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-avatar .bjy-floa-approve {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-avatar .bjy-flo-count {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  background: #ff4f5f;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  display: none;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-avatar .xb-show {
+  display: block;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-info {
+  width: 160px;
+  height: 35px;
+  font-size: 14px;
+  float: left;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-info .bjy-flo-username {
+  width: 160px;
+  height: 15px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-info .bjy-flo-username .bjy-flou-time {
+  float: right;
+  font-size: 12px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-fl-one .bjy-flo-info .bjy-flo-school {
+  margin-top: 5px;
+  width: 160px;
+  height: 15px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-friend-list .bjy-flo-checked {
+  background: #fff;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box {
+  width: 490px;
+  height: 525px;
+  float: left;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history {
+  padding: 10px;
+  width: 490px;
+  height: 325px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one {
+  margin-bottom: 20px;
+  padding: 0 50px;
+  width: 470px;
+  position: relative;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one .bjy-cbhl-avatar {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one .bjy-cbhl-avatar .bjy-cbhla-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 3px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one .bjy-cbhl-avatar .bjy-cbhla-approve {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one .bjy-cbhl-avatar .bjy-cbhla-triangle {
+  width: 10px;
+  height: 20px;
+  position: absolute;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbh-one .bjy-cbhl-content {
+  width: 370px;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-left .bjy-cbhl-avatar {
+  left: 0px;
+  top: 0;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-left .bjy-cbhl-avatar .bjy-cbhla-approve {
+  left: 22px;
+  top: 22px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-left .bjy-cbhl-avatar .bjy-cbhla-triangle {
+  left: 44px;
+  top: 10px;
+  background: url('/Public/statics/rongcloud/images/triangle-left-bjy.png') no-repeat;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-left .bjy-cbhl-content {
+  background: #e6ecff;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-right .bjy-cbhl-avatar {
+  right: -10px;
+  top: 0;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-right .bjy-cbhl-avatar .bjy-cbhla-approve {
+  right: 37px;
+  top: 22px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-right .bjy-cbhl-avatar .bjy-cbhla-triangle {
+  right: 50px;
+  top: 10px;
+  background: url('/Public/statics/rongcloud/images/triangle-right-bjy.png') no-repeat;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-history .bjy-cbhla-right .bjy-cbhl-content {
+  background: #d7efff;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-middle {
+  width: 490px;
+  height: 30px;
+  background: #eee;
+  position: relative;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-sendbox {
+  width: 490px;
+  height: 115px;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-sendbox .bjy-cbs-content {
+  padding: 10px;
+  width: 490px;
+  line-height: 20px;
+  font-size: 14px;
+  border: none;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-handle {
+  padding-left: 310px;
+  padding-bottom: 25px;
+  width: 490px;
+  height: 30px;
+  overflow: hidden;
+}
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-handle .bjy-cbh-close,
+#bjy-chat-modal .modal-dialog .modal-content .bjy-chat .bjy-chat-box .bjy-cb-handle .bjy-cbh-send {
+  margin-left: 10px;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #00ccc0;
+  font-size: 14px;
+  color: #000;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+}

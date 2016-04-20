@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+.agree {
+  width: 1000px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.b-display-none {
+  display: none;
+}
+#nav {
+  width: 100%;
+  height: 40px;
+  background: #333333;
+  color: #fff;
+}
+#nav .inside {
+  margin: 0 auto;
+  width: 1200px;
+  height: 40px;
+}
+#nav .inside .name {
+  width: 200px;
+  height: 40px;
+  font-size: 30px;
+  float: left;
+}
+#nav .inside .name span {
+  font-size: 16px;
+}
+#nav .inside .schedule {
+  margin-left: 10px;
+  width: 200px;
+  height: 40px;
+  float: left;
+}
+#nav .inside .schedule .number {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50%;
+  background: #80AAB7;
+  float: left;
+}
+#nav .inside .schedule .word {
+  width: 160px;
+  height: 40px;
+  float: left;
+  line-height: 50px;
+  text-indent: 10px;
+  font-size: 16px;
+}
+#nav .inside .active .number {
+  background: #008CBA;
+}
+#nav .inside .active .word {
+  color: #008CBA;
+}
+#out {
+  width: 100%;
+  background: #F8F8F8;
+  overflow: hidden;
+}
+#out .inside {
+  margin: 0 auto;
+  padding: 20px;
+  width: 1180px;
+  background: #fff;
+  box-shadow: 0px 0px 3px #ccc;
+  overflow: hidden;
+}
+#out .inside .agreement {
+  height: 600px;
+  overflow: hidden;
+}
+#out .inside .agreement h2 {
+  height: 60px;
+  line-height: 60px;
+}
+#out .inside .agreement .content {
+  font-size: 20px;
+}
+#out .inside .agreement .admin_hint {
+  color: red;
+}
+#out .inside .create {
+  width: 1180px;
+}
+#out .inside .create .one {
+  padding-left: 20px;
+  width: 1180px;
+  height: 40px;
+  line-height: 40px;
+}
+#out .inside .create .one label {
+  width: 100px;
+}

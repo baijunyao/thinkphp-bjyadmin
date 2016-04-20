@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>简易登录界面 - bjyadmin</title>
+	<bootstrapcss />
+</head>
+<body>
+<br />
+<br />
+<a href="{:U('Admin/Index/index')}">前往管理后台</a>
+<br />
+<br />
+<a href="{:U('Home/Index/logout')}">退出登录</a>
+<br />
+<br />
+登录：
+<form method="post">
+    用户名：<input type="text" name="username" value="admin">
+    密码：<input type="text" name="password" value="123456">
+    <input type="submit" value="登录">
+</form>
+<bootstrapjs />
+</body>
+</html>

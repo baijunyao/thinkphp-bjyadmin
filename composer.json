@@ -1,0 +1,22 @@
+{
+    "name": "bjy/bjyadmin",
+    "description": "the bjyadmin",
+    "type": "framework",
+    "keywords": ["framework","bjyadmin","ORM"],
+    "homepage": "http://www.baijunyao.com",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "baijunyao",
+            "email": "baijunyao@baijunyao.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {"type": "composer", "url": "http://packagist.phpcomposer.com"},
+        {"packagist": false}
+    ]
+}

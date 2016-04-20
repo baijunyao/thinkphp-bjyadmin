@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkboxes and radio buttons customization (jQuery and Zepto) plugin</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+
+  <link href="../skins/all.css?v=1.0.2" rel="stylesheet">
+  <script src="./js/jquery.js"></script>
+  <script src="../icheck.js?v=1.0.2"></script>
+</head>
+<body>
+
+
+
+
+
+
+              <ul class="skin-square">
+
+                  <input tabindex="9" type="checkbox" id="">
+
+                </li>
+                <li>
+                  <input tabindex="10" type="checkbox" id="" checked>
+                  <label for="square-checkbox-2">Checkbox 2</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="square-checkbox-disabled" disabled>
+                  <label for="square-checkbox-disabled">Disabled</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="square-checkbox-disabled-checked" checked disabled>
+                  <label for="square-checkbox-disabled-checked">Disabled &amp; checked</label>
+                </li>
+              </ul>
+
+              <ul class="skin-square">
+                <li>
+                  <input tabindex="11" type="radio" id="square-radio-1" name="square-radio">
+                  <label for="square-radio-1">Radio button 1</label>
+                </li>
+                <li>
+                  <input tabindex="12" type="radio" id="square-radio-2" name="square-radio" checked>
+                  <label for="square-radio-2">Radio button 2</label>
+                </li>
+                <li>
+                  <input type="radio" id="square-radio-disabled" disabled>
+                  <label for="square-radio-disabled">Disabled</label>
+                </li>
+                <li>
+                  <input type="radio" id="square-radio-disabled-checked" checked disabled>
+                  <label for="square-radio-disabled-checked">Disabled &amp; checked</label>
+                </li>
+              </ul>
+
+
+
+            <script>
+            $(document).ready(function(){
+              $('.skin-square input').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+                increaseArea: '20%'
+              });
+            });
+            </script>
+
+
+
+
+
+</body>
+</html>
