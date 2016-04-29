@@ -39,7 +39,7 @@ if(@$_GET['c']=='success'){
         }
         // 导入sql数据并创建表
         $bjyadmin_str=file_get_contents('./bjyadmin.sql');
-        $sql_array=preg_split("/;[\r\n]+/", str_replace('bjy_',$data['DB_PREFIX'],$bjyadmin_str));
+        $sql_array=preg_split("/;[\r\n]+/", str_replace('bjyadmin_',$data['DB_PREFIX'],$bjyadmin_str));
         foreach ($sql_array as $k => $v) {
             if (!empty($v)) {
                 $link->query($v);
