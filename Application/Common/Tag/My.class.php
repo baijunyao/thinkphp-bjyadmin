@@ -154,7 +154,7 @@ php;
         $rong_key=$rong_key_secret['key'];
         $link=<<<php
 <!-- 引入bootstrjs部分开始 -->
-<script src="__PUBLIC__/statics/js/jquery/1.10.2/jquery.min.js"></script>
+<script src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>
 <script src="__PUBLIC__/statics/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script>
     var xbIsLogin=$is_login,

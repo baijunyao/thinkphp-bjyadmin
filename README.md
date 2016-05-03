@@ -43,7 +43,7 @@
 
 ## 链接
 官网：http://www.baijunyao.com <br />
-github：https://github.com/shuaibai/thinkphp-bjyblog <br />
+github：https://github.com/shuaibai/thinkphp-bjyadmin <br />
 oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin <br />
 
 ## 商业友好的开源协议
