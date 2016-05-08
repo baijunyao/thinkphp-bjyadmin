@@ -26,7 +26,7 @@ class IndexController extends HomeBaseController{
             }
         }else{
             echo '当前状态：';
-            echo check_login() ? '已登录' : '未登录';
+            echo check_login() ? $_SESSION['user']['username'].'已登录' : '未登录';
             $this->display();
         }
 	}
