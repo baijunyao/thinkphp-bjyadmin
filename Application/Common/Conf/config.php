@@ -62,6 +62,7 @@ return array(
     'RONGLIAN_ACCOUNT_SID'   => '', //容联云通讯 主账号 accountSid
     'RONGLIAN_ACCOUNT_TOKEN' => '', //容联云通讯 主账号token accountToken
     'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
+    'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
 //***********************************缓存设置**********************************
     'DATA_CACHE_TIME'        => 1800,        // 数据缓存有效期s
     'DATA_CACHE_PREFIX'      => 'mem_',      // 缓存前缀

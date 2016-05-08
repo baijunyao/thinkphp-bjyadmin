@@ -194,5 +194,91 @@ class RuleController extends AdminBaseController{
 		$this->display();
 	}
 
+	/**
+	 * 添加管理员
+	 */
+	public function add_admin(){
+		if(IS_POST){
+		    $data=I('post.');
+		    $result=D('Users')->addData($data);
+		    if($result){
+		    	if (!empty($data['group_ids'])) {
+			    	foreach ($data['group_ids'] as $k => $v) {
+			    		$group=array(
+			    			'uid'=>$result,
+			    			'group_id'=>$v
+			    			);
+			    		D('AuthGroupAccess')->addData($group);
+			    	}		    		
+		    	}
+		        // 操作成功
+		        $this->success('添加成功',U('Admin/Rule/admin_user_list'));
+		    }else{
+		    	$error_word=D('Users')->getError();
+		        // 操作失败
+		        $this->error($error_word);
+		    }
+		}else{
+		    $data=D('AuthGroup')->select();
+			$assign=array(
+				'data'=>$data
+				);
+			$this->assign($assign);
+		    $this->display();
+		}
+	}
 
+	/**
+	 * 修改管理员
+	 */
+	public function edit_admin(){
+		if(IS_POST){
+		    $data=I('post.');
+		    // 组合where数组条件
+		    $uid=$data['id'];
+		    $map=array(
+		        'id'=>$uid
+		        );
+		    // 修改权限
+    		D('AuthGroupAccess')->deleteData(array('uid'=>$uid));
+	    	foreach ($data['group_ids'] as $k => $v) {
+	    		$group=array(
+	    			'uid'=>$uid,
+	    			'group_id'=>$v
+	    			);
+	    		D('AuthGroupAccess')->addData($group);
+	    	}		    		
+	    	$result=D('Users')->editData($map,$data);
+		    if($result){
+		        // 操作成功
+		        $this->success('编辑成功',U('Admin/Rule/edit_admin',array('id'=>$uid)));
+		    }else{
+		    	$error_word=D('Users')->getError();
+		    	if (empty($error_word)) {
+		    		$this->success('编辑成功',U('Admin/Rule/edit_admin',array('id'=>$uid)));
+		    	}else{
+			        // 操作失败
+			        $this->error($error_word);		    		
+		    	}
+
+		    }
+		}else{
+			$id=I('get.id',0,'intval');
+			// 获取用户数据
+			$user_data=M('Users')->find($id);
+			// 获取已加入用户组
+			$group_data=M('AuthGroupAccess')
+				->where(array('uid'=>$id))
+				->getField('group_id',true);
+			// 全部用户组
+		    $data=D('AuthGroup')->select();
+			$assign=array(
+				'data'=>$data,
+				'user_data'=>$user_data,
+				'group_data'=>$group_data
+				);
+			$this->assign($assign);
+		    $this->display();
+		}
+	}
 }

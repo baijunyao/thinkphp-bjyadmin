@@ -826,12 +826,13 @@ function send_sms_code($phone,$code){
     $accountToken=C('RONGLIAN_ACCOUNT_TOKEN');
     //应用Id
     $appId=C('RONGLIAN_APPID');
-
+    //应用Id
+    $templateId=C('RONGLIAN_TEMPLATE_ID');
     $rest = new \Org\Xb\Rest($serverIP,$serverPort,$softVersion);
     $rest->setAccount($accountSid,$accountToken);
     $rest->setAppId($appId);
     // 发送模板短信
-    $result=$rest->sendTemplateSMS($phone,array($code,5),59939);
+    $result=$rest->sendTemplateSMS($phone,array($code,5),$templateId);
     if($result==NULL) {
         return false;
     }

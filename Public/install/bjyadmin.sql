@@ -11,7 +11,7 @@
  Target Server Version : 50711
  File Encoding         : utf-8
 
- Date: 05/04/2016 00:03:37 AM
+ Date: 05/08/2016 22:14:06 PM
 */
 
 SET NAMES utf8;
@@ -69,7 +69,7 @@ CREATE TABLE `bjyadmin_auth_group` (
 --  Records of `bjyadmin_auth_group`
 -- ----------------------------
 BEGIN;
-INSERT INTO `bjyadmin_auth_group` VALUES ('1', '超级管理员', '1', '6,96,20,1,2,3,4,5,64,21,7,8,9,10,11,12,13,14,15,16,123,19,104,105,106,107,108,118,109,110,111,112,117'), ('2', '产品管理员', '1', '6,96,1,2,3,4,56,57,60,61,63,71,72,65,67,74,75,66,68,69,70,73,77,78,82,83,88,89,90,99,91,92,97,98,104,105,106,107,108,118,109,110,111,112,117,113,114'), ('4', '文章编辑', '1', '6,96,57,60,61,63,71,72,65,67,74,75,66,68,69,73,79,80,78,82,83,88,89,90,99,100,97,98,104,105,106,107,108,118,109,110,111,112,117,113,114');
+INSERT INTO `bjyadmin_auth_group` VALUES ('1', '超级管理员', '1', '6,96,20,1,2,3,4,5,64,21,7,8,9,10,11,12,13,14,15,16,123,124,125,19,104,105,106,107,108,118,109,110,111,112,117'), ('2', '产品管理员', '1', '6,96,1,2,3,4,56,57,60,61,63,71,72,65,67,74,75,66,68,69,70,73,77,78,82,83,88,89,90,99,91,92,97,98,104,105,106,107,108,118,109,110,111,112,117,113,114'), ('4', '文章编辑', '1', '6,96,57,60,61,63,71,72,65,67,74,75,66,68,69,73,79,80,78,82,83,88,89,90,99,100,97,98,104,105,106,107,108,118,109,110,111,112,117,113,114');
 COMMIT;
 
 -- ----------------------------
@@ -88,7 +88,7 @@ CREATE TABLE `bjyadmin_auth_group_access` (
 --  Records of `bjyadmin_auth_group_access`
 -- ----------------------------
 BEGIN;
-INSERT INTO `bjyadmin_auth_group_access` VALUES ('88', '1');
+INSERT INTO `bjyadmin_auth_group_access` VALUES ('88', '1'), ('89', '2'), ('89', '4');
 COMMIT;
 
 -- ----------------------------
@@ -105,13 +105,13 @@ CREATE TABLE `bjyadmin_auth_rule` (
   `condition` char(100) NOT NULL DEFAULT '' COMMENT '规则表达式，为空表示存在就验证，不为空表示按照条件验证',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=124 DEFAULT CHARSET=utf8 COMMENT='规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8 COMMENT='规则表';
 
 -- ----------------------------
 --  Records of `bjyadmin_auth_rule`
 -- ----------------------------
 BEGIN;
-INSERT INTO `bjyadmin_auth_rule` VALUES ('1', '20', 'Admin/ShowNav/nav', '菜单管理', '1', '1', ''), ('2', '1', 'Admin/Nav/index', '菜单列表', '1', '1', ''), ('3', '1', 'Admin/Nav/add', '添加菜单', '1', '1', ''), ('4', '1', 'Admin/Nav/edit', '修改菜单', '1', '1', ''), ('5', '1', 'Admin/Nav/delete', '删除菜单', '1', '1', ''), ('21', '0', 'Admin/ShowNav/rule', '权限控制', '1', '1', ''), ('7', '21', 'Admin/Rule/index', '权限管理', '1', '1', ''), ('8', '7', 'Admin/Rule/add', '添加权限', '1', '1', ''), ('9', '7', 'Admin/Rule/edit', '修改权限', '1', '1', ''), ('10', '7', 'Admin/Rule/delete', '删除权限', '1', '1', ''), ('11', '21', 'Admin/Rule/group', '用户组管理', '1', '1', ''), ('12', '11', 'Admin/Rule/add_group', '添加用户组', '1', '1', ''), ('13', '11', 'Admin/Rule/edit_group', '修改用户组', '1', '1', ''), ('14', '11', 'Admin/Rule/delete_group', '删除用户组', '1', '1', ''), ('15', '11', 'Admin/Rule/rule_group', '分配权限', '1', '1', ''), ('16', '11', 'Admin/Rule/check_user', '添加成员', '1', '1', ''), ('19', '21', 'Admin/Rule/admin_user_list', '管理员列表', '1', '1', ''), ('20', '0', 'Admin/ShowNav/config', '系统设置', '1', '1', ''), ('6', '0', 'Admin/Index/index', '后台首页', '1', '1', ''), ('64', '1', 'Admin/Nav/order', '菜单排序', '1', '1', ''), ('96', '6', 'Admin/Index/welcome', '欢迎界面', '1', '1', ''), ('104', '0', 'Admin/ShowNav/posts', '文章管理', '1', '1', ''), ('105', '104', 'Admin/Posts/index', '文章列表', '1', '1', ''), ('106', '105', 'Admin/Posts/add_posts', '添加文章', '1', '1', ''), ('107', '105', 'Admin/Posts/edit_posts', '修改文章', '1', '1', ''), ('108', '105', 'Admin/Posts/delete_posts', '删除文章', '1', '1', ''), ('109', '104', 'Admin/Posts/category_list', '分类列表', '1', '1', ''), ('110', '109', 'Admin/Posts/add_category', '添加分类', '1', '1', ''), ('111', '109', 'Admin/Posts/edit_category', '修改分类', '1', '1', ''), ('112', '109', 'Admin/Posts/delete_category', '删除分类', '1', '1', ''), ('117', '109', 'Admin/Posts/order_category', '分类排序', '1', '1', ''), ('118', '105', 'Admin/Posts/order_posts', '文章排序', '1', '1', ''), ('123', '11', 'Admin/Rule/add_user_to_group', '设置为管理员', '1', '1', '');
+INSERT INTO `bjyadmin_auth_rule` VALUES ('1', '20', 'Admin/ShowNav/nav', '菜单管理', '1', '1', ''), ('2', '1', 'Admin/Nav/index', '菜单列表', '1', '1', ''), ('3', '1', 'Admin/Nav/add', '添加菜单', '1', '1', ''), ('4', '1', 'Admin/Nav/edit', '修改菜单', '1', '1', ''), ('5', '1', 'Admin/Nav/delete', '删除菜单', '1', '1', ''), ('21', '0', 'Admin/ShowNav/rule', '权限控制', '1', '1', ''), ('7', '21', 'Admin/Rule/index', '权限管理', '1', '1', ''), ('8', '7', 'Admin/Rule/add', '添加权限', '1', '1', ''), ('9', '7', 'Admin/Rule/edit', '修改权限', '1', '1', ''), ('10', '7', 'Admin/Rule/delete', '删除权限', '1', '1', ''), ('11', '21', 'Admin/Rule/group', '用户组管理', '1', '1', ''), ('12', '11', 'Admin/Rule/add_group', '添加用户组', '1', '1', ''), ('13', '11', 'Admin/Rule/edit_group', '修改用户组', '1', '1', ''), ('14', '11', 'Admin/Rule/delete_group', '删除用户组', '1', '1', ''), ('15', '11', 'Admin/Rule/rule_group', '分配权限', '1', '1', ''), ('16', '11', 'Admin/Rule/check_user', '添加成员', '1', '1', ''), ('19', '21', 'Admin/Rule/admin_user_list', '管理员列表', '1', '1', ''), ('20', '0', 'Admin/ShowNav/config', '系统设置', '1', '1', ''), ('6', '0', 'Admin/Index/index', '后台首页', '1', '1', ''), ('64', '1', 'Admin/Nav/order', '菜单排序', '1', '1', ''), ('96', '6', 'Admin/Index/welcome', '欢迎界面', '1', '1', ''), ('104', '0', 'Admin/ShowNav/posts', '文章管理', '1', '1', ''), ('105', '104', 'Admin/Posts/index', '文章列表', '1', '1', ''), ('106', '105', 'Admin/Posts/add_posts', '添加文章', '1', '1', ''), ('107', '105', 'Admin/Posts/edit_posts', '修改文章', '1', '1', ''), ('108', '105', 'Admin/Posts/delete_posts', '删除文章', '1', '1', ''), ('109', '104', 'Admin/Posts/category_list', '分类列表', '1', '1', ''), ('110', '109', 'Admin/Posts/add_category', '添加分类', '1', '1', ''), ('111', '109', 'Admin/Posts/edit_category', '修改分类', '1', '1', ''), ('112', '109', 'Admin/Posts/delete_category', '删除分类', '1', '1', ''), ('117', '109', 'Admin/Posts/order_category', '分类排序', '1', '1', ''), ('118', '105', 'Admin/Posts/order_posts', '文章排序', '1', '1', ''), ('123', '11', 'Admin/Rule/add_user_to_group', '设置为管理员', '1', '1', ''), ('124', '11', 'Admin/Rule/add_admin', '添加管理员', '1', '1', ''), ('125', '11', 'Admin/Rule/edit_admin', '修改管理员', '1', '1', '');
 COMMIT;
 
 -- ----------------------------
@@ -190,7 +190,7 @@ CREATE TABLE `bjyadmin_users` (
 --  Records of `bjyadmin_users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `bjyadmin_users` VALUES ('88', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '1', '1449199996', '', '0'), ('89', 'admin2', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '1', '1449199996', '', '0');
+INSERT INTO `bjyadmin_users` VALUES ('88', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '1', '1449199996', '', '0'), ('89', 'admin2', '', '', '', '', '1', '1449199996', '', '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
