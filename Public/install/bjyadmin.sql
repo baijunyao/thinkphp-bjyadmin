@@ -11,7 +11,7 @@
  Target Server Version : 50711
  File Encoding         : utf-8
 
- Date: 05/08/2016 22:14:06 PM
+ Date: 05/08/2016 23:44:00 PM
 */
 
 SET NAMES utf8;
@@ -178,6 +178,7 @@ CREATE TABLE `bjyadmin_users` (
   `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '用户头像，相对于upload/avatar目录',
   `email` varchar(100) NOT NULL DEFAULT '' COMMENT '登录邮箱',
   `email_code` varchar(60) DEFAULT NULL COMMENT '激活码',
+  `phone` bigint(11) unsigned DEFAULT NULL COMMENT '手机号',
   `status` tinyint(1) NOT NULL DEFAULT '2' COMMENT '用户状态 0：禁用； 1：正常 ；2：未验证',
   `register_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
   `last_login_ip` varchar(16) NOT NULL DEFAULT '' COMMENT '最后登录ip',
@@ -190,7 +191,7 @@ CREATE TABLE `bjyadmin_users` (
 --  Records of `bjyadmin_users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `bjyadmin_users` VALUES ('88', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '1', '1449199996', '', '0'), ('89', 'admin2', '', '', '', '', '1', '1449199996', '', '0');
+INSERT INTO `bjyadmin_users` VALUES ('88', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', null, '1', '1449199996', '', '0'), ('89', 'admin2', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', null, '1', '1449199996', '', '0');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
