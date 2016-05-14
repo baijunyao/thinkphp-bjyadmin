@@ -69,9 +69,10 @@ return array(
     'DATA_CACHE_TYPE'        => 'Memcached', // 数据缓存类型,
     'MEMCACHED_SERVER'       => '127.0.0.1', // 服务器ip
     'ALIOSS_CONFIG'          => array(
-        'KEY_ID'             => '', // 阿里云oss 配置项
-        'KEY_SECRET'         => '', // 阿里云oss 配置项
-        'END_POINT'          => 'oss-cn-beijing.aliyuncs.com' // 阿里云oss 配置项
+        'KEY_ID'             => '', // 阿里云oss key_id
+        'KEY_SECRET'         => '', // 阿里云oss key_secret
+        'END_POINT'          => '', // 阿里云oss endpoint
+        'BUCKET'             => ''  // bucken 名称
         ),
     'NEED_UPLOAD_OSS'        => array( // 需要上传的目录
         '/Upload/avatar',

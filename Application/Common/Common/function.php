@@ -62,6 +62,8 @@ function new_oss(){
  * @return bollear      是否上传
  */
 function oss_upload($path){
+    // 获取bucket
+    $bucket=C('ALIOSS_CONFIG.BUCKET');
     // 先统一去除左侧的.或者/ 再添加./
     $oss_path=ltrim($path,'./');
     $path='./'.$oss_path;
@@ -69,9 +71,8 @@ function oss_upload($path){
         // 实例化oss类
         $oss=new_oss();
         // 上传到oss    
-        $oss->uploadFile('xueba17',$oss_path,$path);
-        // 删除本地的文件 
-        // 暂时先不删除
+        $oss->uploadFile($bucket,$oss_path,$path);
+        // 如需上传到oss后 自动删除本地的文件 则删除下面的注释 
         // unlink($path);
         return true;
     }
@@ -249,7 +250,9 @@ function get_url($path){
     if (strpos($path, 'http://')!==false) {
         return $path;
     }
-    return 'http://xueba17.oss-cn-beijing.aliyuncs.com'.$path;
+    // 获取bucket
+    $bucket=C('ALIOSS_CONFIG.BUCKET');
+    return 'http://'.$bucket.'.oss-cn-beijing.aliyuncs.com'.$path;
 }
 
 /**
