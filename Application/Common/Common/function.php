@@ -546,12 +546,10 @@ function send_email($address,$subject,$content){
     }else{
         $phpmailer->AddAddress($address);
     }
-    $phpmailer->AddAddress($address);
     // 设置邮件标题
     $phpmailer->Subject=$subject;
     // 设置邮件正文
     $phpmailer->Body=$content;
-
     // 发送邮件。
     if(!$phpmailer->Send()) {
         $phpmailererror=$phpmailer->ErrorInfo;

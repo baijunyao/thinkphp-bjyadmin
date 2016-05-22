@@ -39,7 +39,17 @@ class IndexController extends HomeBaseController{
         $this->success('退出成功、前往登录页面',U('Home/Index/index'));
     }
 
-
+    /**
+     * 发送邮件
+     */
+    public function send_email(){
+        $email=I('post.email');
+        $result=send_email($email,'邮件标题','邮件内容');
+        if ($result['error']==1) {
+            p($result);die;
+        }
+        $this->success('发送完成',U('Home/Index/index'));
+    }
 
 
 

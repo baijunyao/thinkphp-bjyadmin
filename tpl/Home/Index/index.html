@@ -27,6 +27,14 @@
     密码：<input type="text" name="password" value="123456">
     <input type="submit" value="登录">
 </form>
+<br />
+<br />
+<form action="{:U('Home/Index/send_email')}" method="post">
+    输入邮箱：<input type="text" name="email">
+    <input type="submit" value="发送邮件">
+</form>
+
+
 <bootstrapjs />
 </body>
 </html>

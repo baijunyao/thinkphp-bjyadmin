@@ -5,6 +5,7 @@
 1. [thinkphp集成系列之短信验证码、订单通知](http://baijunyao.com/article/66)
 2. [thinkphp集成系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
 3. [thinkphp集成系列之阿里云oss](http://baijunyao.com/article/68)
+4. [thinkphp集成系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
 
 ## 使用说明
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；
