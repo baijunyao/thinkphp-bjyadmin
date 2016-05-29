@@ -28,7 +28,7 @@ return array(
 //***********************************URL设置**************************************
     'MODULE_ALLOW_LIST'      => array('Home','Admin','Api','User','App'), //允许访问列表
     'URL_HTML_SUFFIX'        => '',  // URL伪静态后缀设置
-    'URL_MODEL'              => 2,  //启用rewrite
+    'URL_MODEL'              => 1,  //启用rewrite
 //***********************************SESSION设置**********************************
     'SESSION_OPTIONS'        => array(
         'name'               => 'BJYADMIN',//设置session名
