@@ -6,6 +6,7 @@
 2. [thinkphp集成系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
 3. [thinkphp集成系列之阿里云oss](http://baijunyao.com/article/68)
 4. [thinkphp集成系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
+5. [thinkphp集成系列之友盟消息推送](http://baijunyao.com/article/70)
 
 ## 使用说明
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；
@@ -27,9 +28,9 @@
 8. Auth权限管理
 
 ## php集成使用说明
-大量常用的php工具及sdk已经集成；并写成函数；只要配置好各种key使用非常之方便；<br />
-例如：send_email('邮箱','标题','内容'); 即可发送一封邮件<br />
-设置好需要上传到oss的目录；使用upload('路径'); 用户上传文件时会自动上传到oss；并且可以选择是否在本地保留文件；<br />
+大量常用的php工具及sdk已经集成；并写成函数；只要配置好各种key使用非常之方便；  
+例如：send_email('邮箱','标题','内容'); 即可发送一封邮件  
+设置好需要上传到oss的目录；使用upload('路径'); 用户上传文件时会自动上传到oss；并且可以选择是否在本地保留文件；  
 更多功能可以查看 /Application/Common/Common/function.php 等源代码
 
 ## 前端集成
@@ -39,19 +40,17 @@
 4. font-awesome、animate.css；
 
 ## 前端使用说明
-大量常用的框架及插件已经集成并且加入标签库；在html页面中中只需要很简单的代码就可以引入；<br />
-例如：<br /> `<ueditor name="content" />` 这样一个简单的标签就可以将editor编辑器引入并设置name名为content;
-提交post时后台即可通过content字段直接获取到内容；<br />
-`<jquery />`标签可引入jQuery<br />
-不知道怎么自定义标签？传送门：http://baijunyao.com/article/21 <br />
+大量常用的框架及插件已经集成并且加入标签库；在html页面中中只需要很简单的代码就可以引入；  
+例如：   `<ueditor name="content" />` 这样一个简单的标签就可以将editor编辑器引入并设置name名为content;
+提交post时后台即可通过content字段直接获取到内容；  
+`<jquery />`标签可引入jQuery  
+不知道怎么自定义标签？传送门：http://baijunyao.com/article/21   
 更多标签可以查看 /Application/Common/Tag/My.class.php 源代码
 
 ## 链接
-官网：http://baijunyao.com <br />
-github：https://github.com/baijunyao/thinkphp-bjyadmin <br />
-oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin <br />
+- 官网：http://baijunyao.com   
+- github：https://github.com/baijunyao/thinkphp-bjyadmin   
+- oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin   
 
 ## 商业友好的开源协议
-Thinkbjy遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
-
-
+bjyadmin遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。

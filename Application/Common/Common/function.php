@@ -142,12 +142,11 @@ function file_format($str){
             break;
     }
 }
-
+ 
 /**
  * 发送友盟推送消息
  * @param  integer  $uid   用户id
- * @param  string  $title  推送的标题
- * @param  integer $type   1：官方小秘书   2：我的评论
+ * @param  string   $title 推送的标题
  * @return boolear         是否成功
  */
 function umeng_push($uid,$title){
@@ -159,12 +158,10 @@ function umeng_push($uid,$title){
     }
     // 导入友盟
     Vendor('Umeng.Umeng');
-    // 推送消息
-    $state=M('Student')->where(array('uid'=>$uid))->getField('state');
-    $status=empty($state) ? 0 : $state;
-    // 消息总数统计
-    $count=D('MyMessage')->getAppMessageCount($uid);
-    $count_number=array_sum($count);
+    // 自定义字段   根据实际环境分配；如果不用可以忽略
+    $status=1;
+    // 消息未读总数统计  根据实际环境获取未读的消息总数 此数量会显示在app图标右上角
+    $count_number=1;
     $data=array(
         'key'=>'status',
         'value'=>"$status",
@@ -172,20 +169,19 @@ function umeng_push($uid,$title){
         );
     // 判断device_token  64位表示为苹果 否则为安卓
     if(strlen($device_tokens)==64){
-        $key=C('UMENG_ISO_APP_KEY');
-        $timestamp=C('UMENG_ISO_TIMESTAMP');
+        $key=C('UMENG_IOS_APP_KEY');
+        $timestamp=C('UMENG_IOS_SECRET');
         $umeng=new \Umeng($key, $timestamp);
         $umeng->sendIOSUnicast($data,$title,$device_tokens);
     }else{
         $key=C('UMENG_ANDROID_APP_KEY');
-        $timestamp=C('UMENG_ANDROID_TIMESTAMP');
+        $timestamp=C('UMENG_ANDROID_SECRET');
         $umeng=new \Umeng($key, $timestamp);
         $umeng->sendAndroidUnicast($data,$title,$device_tokens);
     }
     return true;
-
 }
-
+ 
 
 /**
  * 返回用户id

@@ -55,10 +55,10 @@ return array(
     'RONG_DEV_APP_SECRET'    => '', //融云开发环境下的SECRET
     'RONG_PRO_APP_KEY'       => '', //融云生产环境下的key
     'RONG_PRO_APP_SECRET'    => '', //融云生产环境下的SECRET
-    'UMENG_ISO_APP_KEY'      => '', //友盟key
-    'UMENG_ISO_TIMESTAMP'    => '', //友盟timestamp
-    'UMENG_ANDROID_APP_KEY'  => '', //友盟key
-    'UMENG_ANDROID_TIMESTAMP'=> '', //友盟timestamp
+    'UMENG_IOS_APP_KEY'      => '', //友盟ios AppKey
+    'UMENG_IOS_SECRET'       => '', //友盟ios App Master Secret
+    'UMENG_ANDROID_APP_KEY'  => '', //友盟android AppKey
+    'UMENG_ANDROID_SECRET'   => '', //友盟android App Master Secret
     'RONGLIAN_ACCOUNT_SID'   => '', //容联云通讯 主账号 accountSid
     'RONGLIAN_ACCOUNT_TOKEN' => '', //容联云通讯 主账号token accountToken
     'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
