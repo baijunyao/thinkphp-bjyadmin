@@ -132,50 +132,10 @@ php;
 
     // bootstrapjs标签
     public function _bootstrapjs($tag,$content) {
-        // 是否登录
-        $is_login=check_login() ? 1 : 0;
-        if ($is_login) {
-            // 获取用户id
-            $uid=$_SESSION['user']['id'];
-            // 获取用户头像
-            $avatar=get_avatar_url($_SESSION['user']['avatar']);
-            // 获取用户名
-            $username=$_SESSION['user']['username'];  
-            // 获取融云token
-            $rong_token=get_rongcloud_token($uid);
-        }else{
-            $uid='';
-            $avatar='';
-            $username='';
-            $rong_token='';
-        }
-        // 获取融云key
-        $rong_key_secret=get_rong_key_secret();
-        $rong_key=$rong_key_secret['key'];
         $link=<<<php
 <!-- 引入bootstrjs部分开始 -->
 <script src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>
 <script src="__PUBLIC__/statics/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script>
-    var xbIsLogin=$is_login,
-        xbCheckLoginUrl='{:U('Home/Public/ajax_check_login')}',
-        fwbCheckLoginUrl ="{:U('User/Login/check_login')}",
-        fwbLoginOutUrl="{:U('User/Login/ajax_logout')}",
-        rongUserInfoUrl="{:U('Api/Rong/get_user_info')}",
-        rongKey="{$rong_key}",
-        rongToken="{$rong_token}",
-        xbUserInfo = {
-            id: "$uid",
-            name: "$username",
-            avatar: "$avatar"
-        };
-</script>
-<script src="__PUBLIC__/statics/emoji/js/config.js"></script>
-<script src="__PUBLIC__/statics/emoji/js/emoji-picker.js"></script>
-<script src="__PUBLIC__/statics/emoji/js/jquery.emojiarea.js"></script>
-<script src="http://cdn.ronghub.com/RongIMLib-2.0.6.beta.min.js"></script>
-<script src="http://cdn.ronghub.com/RongEmoji-2.0.2.beta.min.js"></script>
-<script src="__PUBLIC__/statics/rongcloud/js/main.js"></script>
 <script src="__PUBLIC_JS__/base.js"></script>
 php;
     return $link;

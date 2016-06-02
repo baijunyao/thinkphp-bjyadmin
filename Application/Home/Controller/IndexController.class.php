@@ -9,6 +9,7 @@ class IndexController extends HomeBaseController{
 	 * 首页
 	 */
 	public function index(){
+        // phpinfo();
         if(IS_POST){
             // 做一个简单的登录 组合where数组条件 
             $map=I('post.');
