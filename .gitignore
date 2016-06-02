@@ -1,2 +1,3 @@
 Runtime/
 install.lock
+Application/Common/Conf/db.php
