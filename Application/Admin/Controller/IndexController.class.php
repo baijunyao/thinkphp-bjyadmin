@@ -25,4 +25,13 @@ class IndexController extends AdminBaseController{
 		$this->display();
 	}
 	
+	/**
+	 * welcome
+	 */
+	public function welcome(){
+	    $this->display();
+	}
+
+
+
 }

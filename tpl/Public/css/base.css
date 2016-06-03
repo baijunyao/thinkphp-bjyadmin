@@ -196,3 +196,21 @@ img {
   line-height: 30px;
   font-size: 14px;
 }
+.bjy-public-jump {
+  margin: 0 auto;
+  padding: 50px 100px;
+  width: 455px;
+  height: 195px;
+  border: 2px solid #00CCC0;
+  border-radius: 4px;
+  text-align: center;
+}
+.bjy-public-jump .bjy-pj-word {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+.bjy-public-jump .bjy-pj-word b {
+  color: #00CCC0;
+}
