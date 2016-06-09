@@ -51,7 +51,13 @@ class IndexController extends HomeBaseController{
         $this->success('发送完成',U('Home/Index/index'));
     }
 
-
+    /**
+     * 生成二维码
+     */
+    public function qrcode(){
+        $url=I('post.url');
+        qrcode($url);
+    }
 
 }
 
