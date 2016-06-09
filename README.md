@@ -7,7 +7,8 @@
 2. [thinkphp集成系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
 3. [thinkphp集成系列之阿里云oss](http://baijunyao.com/article/68)
 4. [thinkphp集成系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
-5. [thinkphp集成系列之友盟消息推送](http://baijunyao.com/article/70)
+5. [thinkphp集成系列之友盟消息推送](http://baijunyao.com/article/70)  
+持续更新中...
 
 ## 使用说明
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；
@@ -19,14 +20,20 @@
 3. 将html视图页面分离；
 
 ## php集成
-1. PHPMail邮件类库；
-2. 容联云通讯短信验证码
-3. 阿里支付宝pc端支付及移动端支付接口
-4. 阿里oss云存储
-5. 融云即时通讯
-6. 友盟推送
-7. Memcached缓存
-8. Auth权限管理
+1. PHPMail发送邮件
+2. PHPExcel生成excel表格
+3. TCPDF生成pdf文件
+4. 容联云通讯短信验证码
+5. 阿里oss云存储
+6. 支付宝pc端支付MD5方式
+7. 支付宝移动端支付接口RSA方式
+8. 微信扫码支付
+9. 微信JSSDK支付
+10. 融云即时通讯
+11. 友盟推送
+12. Memcached缓存
+13. Auth权限管理
+14. emoji表情转换
 
 ## php集成使用说明
 大量常用的php工具及sdk已经集成；并写成函数；只要配置好各种key使用非常之方便；  
