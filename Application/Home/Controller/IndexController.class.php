@@ -59,5 +59,16 @@ class IndexController extends HomeBaseController{
         qrcode($url);
     }
 
+    /**
+     * 生成pdf
+     */
+    public function pdf(){
+        $content=I('post.content');
+        pdf($content);
+    }
+
+
+
+
 }
 

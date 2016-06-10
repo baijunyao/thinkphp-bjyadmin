@@ -1076,7 +1076,6 @@ function get_device_type(){
  */
 function pdf($html='<h1>1111</h1>'){
     vendor('Tcpdf.tcpdf');
-    // p($html);die;
     $pdf = new \Tcpdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     // 设置打印模式
     $pdf->SetCreator(PDF_CREATOR);
@@ -1115,11 +1114,9 @@ function pdf($html='<h1>1111</h1>'){
         $pdf->setLanguageArray($l);
     }
     $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 14, '', true);
     $pdf->AddPage();
-    // $pdf->setTextShadow(array('enabled'=>false, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
     // 设置字体
-    $pdf->SetFont('dejavusans','', 20);
+    $pdf->SetFont('stsongstdlight', '', 14, '', true);
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
     $pdf->Output('example_001.pdf', 'I');
 }

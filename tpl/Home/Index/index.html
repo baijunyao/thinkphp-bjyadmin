@@ -39,6 +39,15 @@
     输入邮箱：<input type="text" name="email">
     <input type="submit" value="发送邮件">
 </form>
+<br />
+<br />
+<form action="{:U('Home/Index/pdf')}" method="post">
+    输入内容<textarea name="content" cols="30" rows="10"></textarea>
+    <input type="submit" value="生成pdf">
+</form>
+
+
+
 
 
 <bootstrapjs />
