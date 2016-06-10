@@ -67,6 +67,12 @@ class IndexController extends HomeBaseController{
         pdf($content);
     }
 
+    /**
+     * 生成excel
+     */
+    public function excel(){
+        
+    }
 
 
 
