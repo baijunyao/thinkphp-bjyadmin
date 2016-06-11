@@ -1,13 +1,14 @@
 ## 简介
-使用thinkphp开发项目的过程中把一些常用的功能或者第三方sdk集成好；开源供亲们参考;
+使用thinkphp开发项目的过程中把一些常用的功能或者第三方sdk整合好；开源供亲们参考;
 这些都是经过线上运营考验的；无毒害可以免费放心折腾使用；只要不会某一天找到我说因为借鉴了这个开源产品的一些方法；而导致了好几个亿的损失；要我负责并赔偿就好；￣へ￣  
 当然；如果是想要一套博客程序；这也是有的：http://git.oschina.net/shuaibai123/thinkbjy
 ## 系列文章
-1. [thinkphp集成系列之短信验证码、订单通知](http://baijunyao.com/article/66)
-2. [thinkphp集成系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
-3. [thinkphp集成系列之阿里云oss](http://baijunyao.com/article/68)
-4. [thinkphp集成系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
-5. [thinkphp集成系列之友盟消息推送](http://baijunyao.com/article/70)  
+1. [thinkphp整合系列之短信验证码、订单通知](http://baijunyao.com/article/66)
+2. [thinkphp整合系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
+3. [thinkphp整合系列之阿里云oss](http://baijunyao.com/article/68)
+4. [thinkphp整合系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
+5. [thinkphp整合系列之友盟消息推送](http://baijunyao.com/article/70)  
+6. [thinkphp整合系列之phpqrcode生成二维码](http://baijunyao.com/article/70)  
 持续更新中...
 
 ## 使用说明
@@ -19,7 +20,7 @@
 2. 自定义标签 /Application/Common/Tag/My.class.php；
 3. 将html视图页面分离；
 
-## php集成
+## php整合
 1. PHPMail发送邮件
 2. PHPExcel生成excel表格
 3. TCPDF生成pdf文件
@@ -35,20 +36,20 @@
 13. Auth权限管理
 14. emoji表情转换
 
-## php集成使用说明
-大量常用的php工具及sdk已经集成；并写成函数；只要配置好各种key使用非常之方便；  
+## php整合使用说明
+大量常用的php工具及sdk已经整合；并写成函数；只要配置好各种key使用非常之方便；  
 例如：send_email('邮箱','标题','内容'); 即可发送一封邮件  
 设置好需要上传到oss的目录；使用upload('路径'); 用户上传文件时会自动上传到oss；并且可以选择是否在本地保留文件；  
 更多功能可以查看 /Application/Common/Common/function.php 等源代码
 
-## 前端集成
+## 前端整合
 1. boostrap、sui、framework7、frozenui等前端框架；
 2. ueditor、umeditor百度富文本编辑器；
 3. webuploader上传、iCheck美化的单选复选按钮、layer弹出层、laydate日期等插件；
 4. font-awesome、animate.css；
 
 ## 前端使用说明
-大量常用的框架及插件已经集成并且加入标签库；在html页面中中只需要很简单的代码就可以引入；  
+大量常用的框架及插件已经整合并且加入标签库；在html页面中中只需要很简单的代码就可以引入；  
 例如：   `<ueditor name="content" />` 这样一个简单的标签就可以将editor编辑器引入并设置name名为content;
 提交post时后台即可通过content字段直接获取到内容；  
 `<jquery />`标签可引入jQuery  
