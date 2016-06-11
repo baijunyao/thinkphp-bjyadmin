@@ -18,20 +18,6 @@ class RongController extends UserBaseController{
             );
         ajax_return($data,'获取成功',0);
     }
-
-    /**
-     * app 获取token
-     */
-    public function app_get_token(){
-        // 获取用户id
-        $uid=get_uid();
-        // 获取token
-        $token=get_rongcloud_token($uid);
-        $data=array(
-            'rongcloud_token'=>$token
-            );
-        ajax_return($data,'获取成功',0);
-    }
     
     /**
      * 获取融云所需的用户数据

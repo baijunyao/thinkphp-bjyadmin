@@ -91,8 +91,8 @@ if (xbIsLogin) {
                         }
                         
                         // 弹框提示
-                        alertStr=htmlObj.attr('data-username')+'：'+receiveMessage;
-                        xbAlert(alertStr);
+                        // alertStr=htmlObj.attr('data-username')+'：'+receiveMessage;
+                        // alert(alertStr);
                     }
 
                     break;
@@ -143,6 +143,7 @@ if (xbIsLogin) {
             // 获取会话列表
             RongIMClient.getInstance().getRemoteConversationList({
                 onSuccess: function(list) {
+                    // console.log(list);
                     var uids;
                     $.each(list, function(index, val) {
                         if (index==0) {
@@ -390,7 +391,7 @@ function rongCreateFriendInfo(userInfo) {
     // 判断是否有未读消息
     var countStrShow=userInfo['count'] ?  'xb-show': '';
     var countStr='<div class="bjy-flo-count '+countStrShow+'">'+userInfo['count']+'</div>';
-    var str='<div class="bjy-fl-one" data-edu="'+userInfo['schoolMajorEducation']+'" data-avatar="'+userInfo['avatar']+'" data-username="'+userInfo['username']+'" data-uid="'+userInfo['id']+'"><div class="bjy-flo-avatar"><img class="bjy-floa-img" src="'+userInfo['avatar']+'">'+approveImg+countStr+'</div><ul class="bjy-flo-info"><li class="bjy-flo-username">'+userInfo['username']+'<span class="bjy-flou-time">'+userInfo['date']+'</span></li><li class="bjy-flo-school">'+userInfo['schoolName']+'</li></ul></div>';
+    var str='<div class="bjy-fl-one" data-edu="" data-avatar="'+userInfo['avatar']+'" data-username="'+userInfo['username']+'" data-uid="'+userInfo['id']+'"><div class="bjy-flo-avatar"><img class="bjy-floa-img" src="'+userInfo['avatar']+'">'+approveImg+countStr+'</div><ul class="bjy-flo-info"><li class="bjy-flo-username">'+userInfo['username']+'<span class="bjy-flou-time">'+userInfo['date']+'</span></li><li class="bjy-flo-school"></li></ul></div>';
     return str;
 }
 
@@ -437,17 +438,15 @@ function rongChangeScrollHeight(num){
 $(function(){
     // 点击左侧好友列表；获取历史消息
     $('.bjy-friend-list').on('click', '.bjy-fl-one', function(event) {
+        // 获取用户信息
+        var uid=$(this).attr('data-uid'),
+            userInfo={
+                'username': $(this).attr('data-username'),
+                'avatar': $(this).attr('data-avatar'),
+            };
         // 如果已经选中；则不再获取历史消息
         if (!$(this).hasClass('bjy-flo-checked')) {
             $('#bjy-chat-modal .bjy-cb-history').html('');
-            var uid=$(this).attr('data-uid'),
-                schoolMajorEducation='',
-                // 此处用户信息需要补全
-                userInfo={
-                    'username': $(this).attr('data-username'),
-                    'avatar': $(this).attr('data-avatar'),
-                    'schoolMajorEducation': $(this).attr('data-edu')
-                };
             // 增加选中样式
             $(this).addClass('bjy-flo-checked').siblings('.bjy-fl-one').removeClass('bjy-flo-checked');
             // 设置uid
@@ -455,12 +454,6 @@ $(function(){
             $('#bjy-chat-modal .bjy-cbh-send').attr('data-avatar',userInfo['avatar']);
             // 设置聊天框title
             $('#bjy-chat-modal .bjy-tt-name').text(userInfo['username']);
-            if (userInfo['schoolMajorEducation'] !='') {
-                schoolMajorEducation='('+userInfo['schoolMajorEducation']+')';
-            }else{
-                schoolMajorEducation='';
-            }
-            $('#bjy-chat-modal .bjy-tt-edu').text(schoolMajorEducation);
             // 获取历史记录
             rongGetMessage(uid,userInfo,99999);
         }
@@ -475,11 +468,11 @@ $(function(){
             htmlStr=$('#bjy-chat-modal .bjy-emoji-box3').html(),
             uid=$(this).attr('data-uid');
         if (uid=='') {
-            xbAlert('请选择聊天的好友');
+            alert('请选择聊天的好友');
             return false;
         }
         if (str=='') {
-            xbAlert('请输入聊天内容');
+            alert('请输入聊天内容');
             return false;
         }
         // 将消息插入对话框中
@@ -503,31 +496,23 @@ $(function(){
 
     // 点击约聊按钮
     $('.bjy-rong-chat').click(function(event) {
-        if (xbCheckLogin()) {
-            var userInfo={
-                'id':$(this).attr('targetid'),
-                'avatar':$(this).attr('avatar'),
-                'username':$(this).attr('targetname'),
-                'count':0,
-                'date':new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds(),
-                'isStudent':1,
-                'schoolName':$(this).attr('data-school'),
-                'schoolMajorEducation':$(this).attr('data-edu')
-            };
-            // 如果约聊的用户已经在列表中；直接触发点击事件 否则插入列表
-            var htmlObj=rongGetFriendListObj(userInfo['id']);
-            if (htmlObj) {
-                htmlObj.click();
-            }else{
-                var str=rongCreateFriendInfo(userInfo);
-                $('#bjy-chat-modal .bjy-friend-list').prepend(str);
-                $('#bjy-chat-modal .bjy-fl-one').eq(0).click();            
-            }
-            $('#bjy-chat-modal').modal('show');            
+        var userInfo={
+            'id':$(this).attr('targetid'),
+            'avatar':$(this).attr('avatar'),
+            'username':$(this).attr('targetname'),
+            'count':0,
+            'date':new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds(),
+        };
+        // 如果约聊的用户已经在列表中；直接触发点击事件 否则插入列表
+        var htmlObj=rongGetFriendListObj(userInfo['id']);
+        if (htmlObj) {
+            htmlObj.click();
         }else{
-            xbShowLogin();
-            xbAlert('您需要登录才可约聊');
+            var str=rongCreateFriendInfo(userInfo);
+            $('#bjy-chat-modal .bjy-friend-list').prepend(str);
+            $('#bjy-chat-modal .bjy-fl-one').eq(0).click();            
         }
+        $('#bjy-chat-modal').modal('show');
     });
 
 })

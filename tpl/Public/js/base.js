@@ -1,3 +1,109 @@
+$(function(){
+    // 初始化emoji
+    window.emojiPicker = new EmojiPicker({
+        emojiable_selector: '[data-emojiable=true]',
+        assetsPath: 'http://xueba17.oss-cn-beijing.aliyuncs.com/Public/statics/emoji/images',
+        'iconSize': 20
+    });
+    window.emojiPicker.discover();
+     
+ 
+    // 需要转emoji的选择器 表情选择、学霸秀、聊天框
+    var toEmoji=['.bjy-emoji-box','.lqk-cfont-one','.bjy-cbhl-content,.lqk-sshow-info'];
+    $.each(toEmoji, function(index, val) {
+        $.each($(val), function(k, v) {
+            var str=$(v).html();
+            var newStr=window.emojiPicker.unicodeToImage(str);
+            $(v).html(newStr);            
+        });
+ 
+    });
+    // 评论框内的图片转换为from中utf8
+    var imageDiv=['.bjy-emoji-box1','.bjy-emoji-box2','.bjy-emoji-box3'];
+    var emojiFrom=['.bjy-emoji-from1','.bjy-emoji-from2','.bjy-emoji-from3'];
+    $.each(imageDiv, function(index, val) {
+        $(val).blur(function(event) {
+            var str=emojiDeleteTag($(this).html());
+            $(emojiFrom[index]).val(str);
+        });
+    });
+ 
+    /**
+     * 将带有emoji图片的字符串转为utf8
+     * @param  {string} str 带emoji图片的字符串
+     * @return {string}     utf8字符串
+     */
+    function emojiDeleteTag(str){
+        var str=str.replace(/<img.*?src=\".*?\".*?style=\".*?\".*?alt=\"/g,'');
+        var str=str.replace(/<img.*?style=\'.*?\'.*?alt=\"/g,'');
+        var str=str.replace(/\".*?src=\".*?\">/g,'');
+        str=str.replace(/:">/g,':');
+        str=window.emojiPicker.colonToUnicode(str);
+        return str;
+    }
+    // 显示或隐藏表情框
+    $('.bjy-emoji-ico').click(function(event) {
+        var parentObj=$(this).parents('.bjy-show-out').eq(0);
+        parentObj.find('.bjy-emoji-box').toggleClass('show');
+        parentObj.find('.bjy-emoji-category').eq(0).click();
+    });
+    // 点击emoji分类；获取分类下的表情
+    $('.bjy-emoji-box').on('click', '.bjy-emoji-category', function(event) {
+        var indexNumber=$(this).index(),
+            thisEmojiConfig=Config.EmojiCategories[indexNumber],
+            thisHtml='',
+            colon='';
+        // 将colon格式的标签转为图片格式
+        $.each(thisEmojiConfig, function(index, val) {
+            colon +=':'+Config.Emoji[val][1][0]+':';
+            thisHtml=window.emojiPicker.colonToImage(colon);
+        });
+        // 将图片插入到div中
+        $(this).parents('.bjy-emoji-box').eq(0).find('.bjy-emoji-imgs').eq(indexNumber).html(thisHtml);
+    });
+    // 点击添加表情
+    $('body').on('click','.bjy-emoji-box img', function(event) {
+        var str=$(this).prop("outerHTML");
+        $(this).parents('.bjy-show-out').eq(0).find('.bjy-show-box').focus();
+        insertHtmlAtCaret(str);
+        // 选择表情后关闭表情选择框
+        $(this).parents('.bjy-show-out').eq(0).find('.bjy-emoji-box').removeClass('show')
+    });
+     
+})
+ 
+ 
+/**
+ * 在textarea光标后插入内容
+ * @param  string  str 需要插入的内容
+ */
+function insertHtmlAtCaret(str) {
+    var sel, range;
+    if(window.getSelection){
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = str;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+                range.insertNode(frag);
+            if(lastNode){
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {
+        document.selection.createRange().pasteHTML(str);
+    }
+}
+
 /**
  * 通用跳转函数
  * @param  String url	 跳转的目标url	

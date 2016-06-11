@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户2</title>
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/Public/statics/font-awesome-4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__PUBLIC_CSS__/base.css" />
+</head>
+<body>
+
+<button class="bjy-rong-chat" targetid="88" avatar="/Upload/avatar/user1.jpg" targetname="admin">点击与用户1（admin）聊天</button>
+
+<!-- 聊天框开始 -->
+<div class="modal fade" id="bjy-chat-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="bjy-top">
+                <div class="bjy-t-myinfo">
+                    {$_SESSION['user']['username']}
+                    <img class="bjy-t-avatar" src="{:get_url($_SESSION['user']['avatar'])}">
+                </div>
+                <div class="bjy-t-title">
+                    <span class="bjy-tt-name"></span>
+                    <span class="bjy-tt-edu"></span>
+                    <div class="bjy-tt-close" data-dismiss="modal" aria-hidden="true"></div>
+                </div>
+            </div>
+            <div class="bjy-chat bjy-emoji-out3">
+                <div class="bjy-friend-list"></div>
+                <div class="bjy-chat-box bjy-show-out">
+                    <div class="bjy-cb-history"></div>
+                    <div class="bjy-cb-middle">
+                        <button type="button" class="bjy-emoji-ico"></button>
+                        <div class="bjy-emoji-box">
+                            <div class="bjy-e-triangle" style="display:block;width:20px;height:20px;">
+                                <div style="display:block;position:absolute;left:10px;top:10px;width:0;height:0;border-style:solid;border-width:10px;border-color:transparent transparent #eee  transparent;"></div>
+                                <div style="display:block;position:absolute;left:10px;top:11px;;width:0;height:0;border-style:solid;border-width:10px;border-color:transparent transparent #fff transparent;"></div>
+                            </div>
+                            <div class="xb-h-10"></div>
+                            <ul class="nav nav-tabs">
+                                <li class="active bjy-emoji-category">
+                                    <a href="#bjy-face-11" data-toggle="tab">表情</a>
+                                </li>
+                                <li class="bjy-emoji-category">
+                                    <a href="#bjy-face-12" data-toggle="tab">动物</a>
+                                </li>
+                                <li class="bjy-emoji-category">
+                                    <a href="#bjy-face-13" data-toggle="tab">水果</a>
+                                </li>
+                                <li class="bjy-emoji-category">
+                                    <a href="#bjy-face-14" data-toggle="tab">国旗</a>
+                                </li>
+                                <li class="bjy-emoji-category">
+                                    <a href="#bjy-face-15" data-toggle="tab">键盘</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade bjy-emoji-imgs in active" id="bjy-face-11"></div><div class="tab-pane fade bjy-emoji-imgs" id="bjy-face-12"></div>
+                                <div class="tab-pane fade bjy-emoji-imgs" id="bjy-face-13"></div>
+                                <div class="tab-pane fade bjy-emoji-imgs" id="bjy-face-14"></div>
+                                <div class="tab-pane fade bjy-emoji-imgs" id="bjy-face-15"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bjy-cb-sendbox">
+                        <textarea class="bjy-emoji-textarea bjy-emoji-from3 bjy-cbs-content hide" name="content"></textarea>
+                        <div class="bjy-show-box bjy-emoji-box3" contenteditable="true"></div>
+                    </div>
+                    <ul class="bjy-cb-handle">
+                        <li class="bjy-cbh-close" data-dismiss="modal" aria-hidden="true">关闭</li>
+                        <li class="bjy-cbh-send" data-uid=''>发送</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 聊天框结束 -->
+
+<!-- 引入bootstrjs部分开始 -->
+<script src="//libs.useso.com/js/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+    var xbIsLogin=1,
+        rongUserInfoUrl="{:U('Api/Rong/get_user_info')}",
+        rongKey="{$rong_key}",
+        rongToken="{$rong_token}",
+        xbUserInfo = {
+            id: "{$uid}",
+            name: "{$username}",
+            avatar: "{$avatar}"
+        };
+</script>
+<script src="__PUBLIC__/statics/emoji/js/config.js"></script>
+<script src="__PUBLIC__/statics/emoji/js/emoji-picker.js"></script>
+<script src="__PUBLIC__/statics/emoji/js/jquery.emojiarea.js"></script>
+<script src="http://cdn.ronghub.com/RongIMLib-2.0.6.beta.min.js"></script>
+<script src="http://cdn.ronghub.com/RongEmoji-2.0.2.beta.min.js"></script>
+<script src="__PUBLIC__/statics/rongcloud/js/main.js"></script>
+<script src="__PUBLIC_JS__/base.js"></script>
+
+</body>
+</html>

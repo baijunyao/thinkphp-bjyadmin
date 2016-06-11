@@ -86,6 +86,54 @@ class IndexController extends HomeBaseController{
         alipay($data);
     }
 
+    /**
+     * 融云用户1
+     */
+    public function user1(){
+        // 模拟id为89的用户的登陆过程
+        $user_data=M('Users')->field('id,username,avatar')->find(88);
+        $_SESSION['user']=array(
+            'id'=>$user_data['id'],
+            'username'=>$user_data['username'],
+            'avatar'=>$user_data['avatar']
+            );
+        // 获取融云key
+        $rong_key_secret=get_rong_key_secret();
+        $assign=array(
+            'uid'=>$user_data['id'], // 用户id
+            'avatar'=>$user_data['avatar'],// 头像
+            'username'=>$user_data['username'],// 用户名
+            'rong_key'=>$rong_key_secret['key'],// 融云key
+            'rong_token'=>get_rongcloud_token($user_data['id'])//获取融云token
+            );
+        $this->assign($assign);
+        $this->display();
+    }
+
+    /**
+     * 融云用户2
+     */
+    public function user2(){
+        // 模拟id为89的用户的登陆过程
+        $user_data=M('Users')->field('id,username,avatar')->find(89);
+        $_SESSION['user']=array(
+            'id'=>$user_data['id'],
+            'username'=>$user_data['username'],
+            'avatar'=>$user_data['avatar']
+            );
+        // 获取融云key
+        $rong_key_secret=get_rong_key_secret();
+        $assign=array(
+            'uid'=>$user_data['id'], // 用户id
+            'avatar'=>$user_data['avatar'],// 头像
+            'username'=>$user_data['username'],// 用户名
+            'rong_key'=>$rong_key_secret['key'],// 融云key
+            'rong_token'=>get_rongcloud_token($user_data['id'])//获取融云token
+            );
+        $this->assign($assign);
+        $this->display();
+    }
+
 
 }
 

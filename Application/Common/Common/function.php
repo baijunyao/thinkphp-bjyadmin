@@ -220,19 +220,6 @@ function ajax_return($data='',$error_message='成功',$error_code=1){
 }
 
 /**
- * 获取完整网络连接的头像
- * @param  string $img 图片名
- * @return string      连接形式的头像
- */
-function get_avatar_url($img){
-    if (empty($img)) {
-        return 'http://xueba17.oss-cn-beijing.aliyuncs.com'.'/Upload/avatar/'.'default.jpg';
-    }else{
-        return 'http://xueba17.oss-cn-beijing.aliyuncs.com'.$img;
-    }
-}
-
-/**
  * 获取完整网络连接
  * @param  string $path 文件路径
  * @return string       http连接
@@ -246,9 +233,14 @@ function get_url($path){
     if (strpos($path, 'http://')!==false) {
         return $path;
     }
-    // 获取bucket
-    $bucket=C('ALIOSS_CONFIG.BUCKET');
-    return 'http://'.$bucket.'.oss-cn-beijing.aliyuncs.com'.$path;
+    // 判断是否使用了oss
+    $alioss=C('ALIOSS_CONFIG');
+    if (empty($alioss['KEY_ID'])) {
+        return 'http://'.$_SERVER['HTTP_HOST'].$path;
+    }else{
+        return 'http://'.$alioss['BUCKET'].'.'.$alioss['END_POINT'].$path;
+    }
+    
 }
 
 /**
@@ -302,7 +294,7 @@ function get_rongcloud_token($uid){
         return false;
     }
     // 获取头像url格式
-    $avatar=get_avatar_url($user_data['avatar']);
+    $avatar=get_url($user_data['avatar']);
     // 获取key和secret
     $key_secret=get_rong_key_secret();
     // 实例化融云
@@ -343,7 +335,7 @@ function refresh_rongcloud_token($uid){
     if (empty($user_data)) {
         return false;
     }
-    $avatar=get_avatar_url($user_data['avatar']);
+    $avatar=get_url($user_data['avatar']);
     // 获取key和secret
     $key_secret=get_rong_key_secret();
     // 实例化融云
@@ -955,7 +947,7 @@ function crop_image($image_path,$width=170,$height=170){
     $image_path=trim($image_path,'.');
     $min_path='.'.str_replace('.', '_'.$width.'_'.$height.'.', $image_path);
     $image = new \Think\Image();
-    $image->open('http://xueba17.oss-cn-beijing.aliyuncs.com'.$image_path);
+    $image->open($image_path);
     // 生成一个居中裁剪为$width*$height的缩略图并保存
     $image->thumb($width, $height,\Think\Image::IMAGE_THUMB_CENTER)->save($min_path);
     oss_upload($min_path);
