@@ -84,12 +84,16 @@ return array(
         'partner'            => '', // partner 从支付宝商户版个人中心获取
         'seller_email'       => '', // email 从支付宝商户版个人中心获取
         'key'                => '', // key 从支付宝商户版个人中心获取
-        'sign_type'          => strtoupper(trim('RSA')), // 可选md5  和 RSA 
+        'sign_type'          => strtoupper(trim('MD5')), // 可选md5  和 RSA 
         'input_charset'      => 'utf-8', // 编码
         'cacert'             => VENDOR_PATH.'Alipay/cacert.pem',  // cacert.pem存放的位置
         'transport'          => 'http', // 协议
-        'private_key_path'   => '', //移动端生成的私有key文件存放于服务器的 绝对路径
-        'public_key_path'    => ''  //移动端生成的共有key文件存放于服务器的 绝对路径
+        'notify_url'         => 'http://baijunyao.com/Api/Alipay/alipay_notify', // 异步接收支付状态通知的链接
+        'return_url'         => 'http://baijunyao.com/Api/Alipay/alipay_return', // 页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。
+        'show_url'           => 'http://baijunyao.com/User/Order/index', // 商品展示网址,收银台页面上,商品展示的超链接。
+        'private_key_path'   => '', //移动端生成的私有key文件存放于服务器的 绝对路径 如果为MD5加密方式；此项可为空
+        'public_key_path'    => '', //移动端生成的公共key文件存放于服务器的 绝对路径 如果为MD5加密方式；此项可为空
+        
         ),
     'WEIXINPAY_CONFIG'       => array(
         'APPID'              => '', // 微信支付APPID

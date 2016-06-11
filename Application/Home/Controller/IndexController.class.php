@@ -74,6 +74,17 @@ class IndexController extends HomeBaseController{
         
     }
 
+    /**
+     * 支付宝
+     */
+    public function alipay(){
+        $data=array(
+            'out_trade_no'=>time(),
+            'price'=>'1',
+            'subject'=>'测试'
+            );
+        alipay($data);
+    }
 
 
 }

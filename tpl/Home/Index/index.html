@@ -30,19 +30,19 @@
 <br />
 <br />
 <form action="{:U('Home/Index/qrcode')}" method="post">
-    输入连接：http://<input type="text" name="url">
+    输入连接：http://<input type="text" name="url" value="baijunyao.com">
     <input type="submit" value="生成二维码">
 </form>
 <br />
 <br />
 <form action="{:U('Home/Index/send_email')}" method="post">
-    输入邮箱：<input type="text" name="email">
+    输入邮箱：<input type="text" name="email" value="baijunyao@baijunyao.com">
     <input type="submit" value="发送邮件">
 </form>
 <br />
 <br />
 <form action="{:U('Home/Index/pdf')}" method="post">
-    输入内容<textarea name="content" cols="30" rows="10"></textarea>
+    输入内容<textarea name="content" cols="30" rows="10">hello word</textarea>
     <input type="submit" value="生成pdf">
 </form>
 

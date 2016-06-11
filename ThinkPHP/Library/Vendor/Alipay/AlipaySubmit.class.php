@@ -106,16 +106,9 @@ class AlipaySubmit {
 		while (list ($key, $val) = each ($para)) {
             $sHtml.= "<input type='hidden' name='".$key."' value='".$val."'/>";
         }
-		
-		//submit按钮控件请不要含有name属性
-//      $sHtml = $sHtml."<input type='submit' value='".$button_name."'></form>";
-//		
-//		echo $sHtml;
-//		p($para);
-//		die;
+        $sHtml=$sHtml.'</form>';
+        // echo $sHtml;die;
 		$sHtml = $sHtml."<script>document.forms['alipaysubmit'].submit();</script>";
-//		echo $sHtml;die;
-//		echo 1;die;
 		return $sHtml;
 	}
 	
@@ -126,10 +119,8 @@ class AlipaySubmit {
      */
 	function buildRequestHttp($para_temp) {
 		$sResult = '';
-		
 		//待请求参数数组字符串
 		$request_data = $this->buildRequestPara($para_temp);
-//		echo 1;die;
 		//远程获取数据
 		$sResult = getHttpResponsePOST($this->alipay_gateway_new, $this->alipay_config['cacert'],$request_data,trim(strtolower($this->alipay_config['input_charset'])));
 		p($request_data);die;

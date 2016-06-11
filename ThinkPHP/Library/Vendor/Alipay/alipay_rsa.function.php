@@ -31,10 +31,9 @@ function rsaSign($prestr) {
  * return 签名结果
 */
 function rsaVerify($prestr, $sign) {
-    $sign = base64_decode($sign);
     $config=C('ALIPAY_CONFIG');
-    $public_key=file_get_contents($config['public_key_path']);
-    $pkeyid=openssl_get_publickey($public_key);
+    $private_key=file_get_contents($config['private_key_path']);
+    $pkeyid=openssl_get_publickey($private_key);
     if ($pkeyid) {
         $verify=openssl_verify($prestr, $sign, $pkeyid);
         openssl_free_key($pkeyid);
