@@ -41,12 +41,16 @@
 </form>
 <br />
 <br />
+<form action="{:U('Home/Index/alipay')}" method="post">
+    输入金额：<input type="text" name="price" value="1">
+    <input type="submit" value="生成支付宝订单">
+</form>
+<br />
+<br />
 <form action="{:U('Home/Index/pdf')}" method="post">
-    输入内容<textarea name="content" cols="30" rows="10">hello word</textarea>
+    输入内容：<textarea name="content" cols="30" rows="10">hello word</textarea>
     <input type="submit" value="生成pdf">
 </form>
-
-
 
 
 

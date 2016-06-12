@@ -1195,34 +1195,6 @@ function create_csv($data,$filename='simple.csv'){
  * 跳向支付宝付款
  * @param  array $order 订单数据 必须包含 out_trade_no(订单号)、price(订单金额)、subject(商品名称标题)
  */
-function alipay1($order){
-    vendor('Alipay.AlipaySubmit','','.class.php');
-    // 获取配置
-    $config=C('ALIPAY_CONFIG');
-    $data=array(
-        "_input_charset" => $config['input_charset'], // 编码格式
-        "notify_url" => $config['notify_url'], // 异步接收支付状态通知的链接
-        "out_trade_no" => $order['out_trade_no'], // 订单号
-        "partner" => $config['partner'], // partner 从支付宝商户版个人中心获取
-        "payment_type" => "1", // 支付类型对应请求时的 payment_type 参数,原样返回。固定设置为1即可
-        "total_fee"=>'1',
-        "return_url" => $config['return_url'], // 页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。
-        "seller_email" => $config['seller_email'], // email 从支付宝商户版个人中心获取
-        "service" => "create_direct_pay_by_user", // 接口名称 固定设置为create_direct_pay_by_user
-        "subject" => $order['subject'], // 商品名称商品的标题/交易标题/订单标 题/订单关键字等
-        "sign_type"=>'MD5',
-        "seller_id"=>$config['partner'],
-    );
-    $alipay=new \AlipaySubmit($config);
-    $new=$alipay->buildRequestPara($data);
-    $go_pay=$alipay->buildRequestForm($new, 'get','支付');
-    echo $go_pay;
-}
-
-/**
- * 跳向支付宝付款
- * @param  array $order 订单数据 必须包含 out_trade_no(订单号)、price(订单金额)、subject(商品名称标题)
- */
 function alipay($order){
     vendor('Alipay.AlipaySubmit','','.class.php');
     // 获取配置
