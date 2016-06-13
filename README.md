@@ -12,7 +12,7 @@
 3. [thinkphp整合系列之阿里云oss](http://baijunyao.com/article/68)
 4. [thinkphp整合系列之phpmailer批量发送邮件](http://baijunyao.com/article/69)
 5. [thinkphp整合系列之友盟消息推送](http://baijunyao.com/article/70)  
-6. [thinkphp整合系列之phpqrcode生成二维码](http://baijunyao.com/article/70)  
+6. [thinkphp整合系列之phpqrcode生成二维码](http://baijunyao.com/article/71)  
 持续更新中...
 
 ## 使用说明
