@@ -20,7 +20,8 @@ class RongController extends UserBaseController{
     }
     
     /**
-     * 获取融云所需的用户数据
+     * 传递一个、或者多个用户id
+     * 获取用户头像用户名；用来组合成好友列表
      */
     public function get_user_info(){
         $uids=I('post.uids');
