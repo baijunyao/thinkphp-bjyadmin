@@ -51,8 +51,8 @@ return array(
     'EMAIL_PASSWORD'         => '', //密码
 //***********************************其他设置**********************************
     'RONG_IS_DEV'            => true,//是否是在开发中
-    'RONG_DEV_APP_KEY'       => '', //融云开发环境下的key
-    'RONG_DEV_APP_SECRET'    => '', //融云开发环境下的SECRET
+    'RONG_DEV_APP_KEY'       => '8luwapkvu3xwl', //融云开发环境下的key    仅供测试使用
+    'RONG_DEV_APP_SECRET'    => '1Aw1D7F6Td25', //融云开发环境下的SECRET  仅供测试使用
     'RONG_PRO_APP_KEY'       => '', //融云生产环境下的key
     'RONG_PRO_APP_SECRET'    => '', //融云生产环境下的SECRET
     'UMENG_IOS_APP_KEY'      => '', //友盟ios AppKey
