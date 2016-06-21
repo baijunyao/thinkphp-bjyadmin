@@ -14,13 +14,14 @@
 5. [thinkphp整合系列之友盟消息推送](http://baijunyao.com/article/70)  
 6. [thinkphp整合系列之phpqrcode生成二维码](http://baijunyao.com/article/71)  
 7. [thinkphp整合系列之融云即时通讯在线聊天](http://baijunyao.com/article/72)  
-8. thinkphp整合系列之支付宝MD5加密方式  
-9. thinkphp整合系列之支付宝RSA加密方式  
-10. thinkphp整合系列之微信扫码支付  
-11. thinkphp整合系列之微信公众号支付   
-12. thinkphp整合系列之微信支付结果通知
-13. thinkphp整合系列之tcpdf生成pdf文件  
-14. thinkphp整合系列之phpexcel生成生成excel文件  
+8. [thinkphp整合系列之tcpdf生成pdf文件](http://baijunyao.com/article/73)  
+9. thinkphp整合系列之phpexcel生成生成excel文件  
+10. thinkphp整合系列之支付宝MD5加密方式  
+11. thinkphp整合系列之支付宝RSA加密方式  
+12. thinkphp整合系列之微信扫码支付  
+13. thinkphp整合系列之微信公众号支付   
+14. thinkphp整合系列之微信支付结果通知  
+14. thinkphp整合系列之paypal支付  
 持续更新中...
 
 ## 使用说明
