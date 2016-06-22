@@ -63,7 +63,7 @@ class IndexController extends HomeBaseController{
      * 生成pdf
      */
     public function pdf(){
-        $content=I('post.content');
+        $content=$_POST['content'];
         pdf($content);
     }
 

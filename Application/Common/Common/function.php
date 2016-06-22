@@ -1066,7 +1066,7 @@ function get_device_type(){
  * 生成pdf
  * @param  string $html      需要生成的内容
  */
-function pdf($html='<h1>1111</h1>'){
+function pdf($html='<h1 style="color:red">hello word</h1>'){
     vendor('Tcpdf.tcpdf');
     $pdf = new \Tcpdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     // 设置打印模式
