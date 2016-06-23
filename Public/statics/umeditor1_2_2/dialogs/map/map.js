@@ -231,8 +231,7 @@
                         center = widget.map.getCenter(),
                         zoom = widget.map.getZoom(),
                         size = widget.map.getSize(),
-                        point = widget.marker.P;
-
+                        point = widget.marker.point;
                     if (widget.root().find(".edui-map-dynamic")[0].checked) {
                         var URL = editor.getOpt('UMEDITOR_HOME_URL'),
                             url = [URL + (/\/$/.test(URL) ? '':'/') + "dialogs/map/map.html" +
@@ -245,6 +244,7 @@
                     } else {
                         url = "http://api.map.baidu.com/staticimage?center=" + center.lng + ',' + center.lat +
                             "&zoom=" + zoom + "&width=" + size.width + '&height=' + size.height + "&markers=" + point.lng + ',' + point.lat;
+                        
                         editor.execCommand('inserthtml', '<img width="' + size.width + '"height="' + size.height + '" src="' + url + '"' + (widget.imgcss ? ' style="' + widget.imgcss + '"' : '') + '/>', true);
                     }
 
