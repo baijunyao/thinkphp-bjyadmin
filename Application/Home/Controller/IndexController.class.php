@@ -135,6 +135,26 @@ class IndexController extends HomeBaseController{
         $this->display();
     }
 
+    /**
+     * 生成xls格式的表格
+     */
+    public function xls(){
+        $data=I('post.data');
+        create_xls($data);
+    }
+
+    /**
+     * 生成csv格式的表格
+     */
+    public function csv(){
+        $data=I('post.data');
+        array_walk($data, function(&$v){
+            $v=implode(',', $v);
+        });
+        create_csv($data);
+    }
+
+
 
 }
 

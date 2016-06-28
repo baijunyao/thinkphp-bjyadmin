@@ -54,8 +54,88 @@
 <br />
 <br />
 请使用2个不同的浏览器分别打开着两个链接即可聊天：<a href="{:U('Home/Index/user1')}" target="_blank">用户1</a>&emsp;<a href="{:U('Home/Index/user2')}">用户2</a>
+<br />
+<br />
+<form action="{:U('Home/Index/xls')}" method="post">
+    <table border="1">
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][1]" value="11">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][2]" value="12">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][3]" value="13">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][1]" value="21">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][2]" value="22">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][3]" value="23">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][1]" value="31">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][2]" value="32">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][3]" value="33">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="生成xls格式表格">
+</form>
+
+<form action="{:U('Home/Index/csv')}" method="post">
+    <table border="1">
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][1]" value="11">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][2]" value="12">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[1][3]" value="13">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][1]" value="21">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][2]" value="22">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[2][3]" value="23">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][1]" value="31">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][2]" value="32">
+            </td>
+            <td>
+                <input style="width: 25px;" type="text" name="data[3][3]" value="33">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="生成csv格式表格">
+</form>
 
 
+    
 <bootstrapjs />
 </body>
 </html>
