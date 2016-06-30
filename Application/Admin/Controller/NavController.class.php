@@ -9,7 +9,7 @@ class NavController extends AdminBaseController{
 	 * 菜单列表
 	 */
 	public function index(){
-		$data=D('AdminNav')->getTreeData('tree','order_number');
+		$data=D('AdminNav')->getTreeData('tree','order_number,id');
 		$assign=array(
 			'data'=>$data
 			);

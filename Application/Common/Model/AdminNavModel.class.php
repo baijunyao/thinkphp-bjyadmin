@@ -32,7 +32,7 @@ class AdminNavModel extends BaseModel{
 		if(empty($order)){
 			$data=$this->select();
 		}else{
-			$data=$this->order($order.' is null,'.$order)->select();
+			$data=$this->order('order_number is null,'.$order)->select();
 		}
 		// 获取树形或者结构数据
 		if($type=='tree'){
