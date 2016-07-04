@@ -214,6 +214,9 @@ $(function(){
             $(this).parents('.b-has-child').eq(0).addClass('active');
         }
     });
+    // 动态调整iframe的高度以适应不同高度的显示器
+    $('.page-content,.main-content').height($(window).height());
+    $('.page-content').css('padding-bottom',50);
 })
 </script>
 </body>
