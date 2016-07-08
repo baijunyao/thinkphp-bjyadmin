@@ -62,7 +62,7 @@ function new_oss(){
  * @return bollear      是否上传
  */
 function oss_upload($path){
-    // 获取bucket
+    // 获取bucket名称
     $bucket=C('ALIOSS_CONFIG.BUCKET');
     // 先统一去除左侧的.或者/ 再添加./
     $oss_path=ltrim($path,'./');
@@ -79,6 +79,17 @@ function oss_upload($path){
     return false;
 }
 
+/**
+ * 删除oss上指定文件
+ * @param  string $object 文件路径 例如删除 /Public/README.md文件  传Public/README.md 即可
+ */
+function oss_delet_object($object){
+    // 实例化oss类
+    $oss=new_oss();
+    // 获取bucket名称
+    $bucket=C('ALIOSS_CONFIG.BUCKET');
+    $test=$oss->deleteObject($bucket,$object);
+}
 
 /**
  * app 视频上传

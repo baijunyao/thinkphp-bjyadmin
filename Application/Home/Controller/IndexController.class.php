@@ -178,7 +178,5 @@ class IndexController extends HomeBaseController{
         create_csv($data);
     }
 
-
-
 }
 
