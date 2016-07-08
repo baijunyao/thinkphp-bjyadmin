@@ -98,7 +98,7 @@ return array(
         'APPID'              => '', // 微信支付APPID
         'MCHID'              => '', // 微信支付MCHID 商户收款账号
         'KEY'                => '', // 微信支付KEY
-        'NOTIFY_URL'         => ''  // 接收支付状态的连接
+        'APPSECRET'          => '', // 公众帐号secert
+        'NOTIFY_URL'         => 'http://baijunyao.com/Api/Weixinpay/notify', // 接收支付状态的连接
         ),
-
 );

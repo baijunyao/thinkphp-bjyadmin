@@ -68,13 +68,6 @@ class IndexController extends HomeBaseController{
     }
 
     /**
-     * 生成excel
-     */
-    public function excel(){
-        
-    }
-
-    /**
      * 支付宝
      */
     public function alipay(){
@@ -85,6 +78,37 @@ class IndexController extends HomeBaseController{
             'subject'=>'测试'
             );
         alipay($data);
+    }
+
+    /**
+     * 微信 公众号jssdk支付
+     */
+    public function wexinpay_js(){
+        // 此处根据实际业务情况生成订单 然后拿着订单去支付
+
+        // 用时间戳虚拟一个订单号  （请根据实际业务更改）
+        $out_trade_no=time();
+        // 组合url
+        $url=U('Api/Weixinpay/pay',array('out_trade_no'=>$out_trade_no));
+        // 前往支付
+        redirect($url);
+    }
+
+    /**
+     * 微信 扫描支付
+     */
+    public function wexinpay_qrcode(){
+        // 此处根据实际业务情况生成订单 然后拿着订单去支付
+
+        // 虚拟的订单 请根据实际业务更改
+        $time=time();
+        $order=array(
+            'body'=>'test',
+            'total_fee'=>1,
+            'out_trade_no'=>strval($time),
+            'product_id'=>1
+            );
+        weixinpay($order);
     }
 
     /**
