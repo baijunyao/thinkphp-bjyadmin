@@ -1244,7 +1244,7 @@ function alipay($order){
  */
 function weixinpay($order){
     $order['trade_type']='NATIVE';
-    Vendor('Weixinpay2.Weixinpay');
+    Vendor('Weixinpay.Weixinpay');
     $weixinpay=new \Weixinpay();
     $weixinpay->pay($order);
 }

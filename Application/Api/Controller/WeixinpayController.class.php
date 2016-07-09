@@ -15,7 +15,7 @@ class WeixinpayController extends HomeBaseController{
         $wxpay=new \Weixinpay();
         $result=$wxpay->notify();
         if ($result) {
-            // 验证成功 修改数据库的订单状态等 $result['out_trade_no']为订单id
+            // 验证成功 修改数据库的订单状态等 $result['out_trade_no']为订单号
             
         }
     }
