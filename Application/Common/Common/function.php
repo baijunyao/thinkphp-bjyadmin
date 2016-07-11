@@ -1198,7 +1198,10 @@ function create_csv($data,$filename='simple.csv'){
     Header( "Accept-Ranges:  bytes ");
     Header( "Content-Disposition:  attachment;  filename=".$filename);
     foreach( $data as $k => $v){
-        echo $v."\n";
+        // 替换掉换行
+        $v=preg_replace('/\s*/', '', $v); 
+        // 转成gbk以兼容office乱码的问题
+        echo iconv('UTF-8','GBK',$v)."\r\n";
     }
 }
 
