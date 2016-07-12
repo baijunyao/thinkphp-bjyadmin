@@ -1185,11 +1185,11 @@ function create_xls($data,$filename='simple.xls'){
  * @param  array $data      需要转的数组
  * @param  string $filename 生成的excel文件名
  *      示例数组：
- *      $a = array(
- *          '1,2,3,4,5',
- *          '6,7,8,9,0',
- *          '1,3,5,6,7'
- *          );
+        $a = array(
+            '1,2,3,4,5',
+            '6,7,8,9,0',
+            '1,3,5,6,7'
+            );
  */
 function create_csv($data,$filename='simple.csv'){
     // 防止没有添加文件后缀
@@ -1250,4 +1250,28 @@ function weixinpay($order){
     Vendor('Weixinpay.Weixinpay');
     $weixinpay=new \Weixinpay();
     $weixinpay->pay($order);
+}
+
+/**
+ * geetest检测验证码
+ */
+function geetest_chcek_verify($data){
+    $geetest_id=C('GEETEST_ID');
+    $geetest_key=C('GEETEST_KEY');
+    $geetest=new \Org\Xb\Geetest($geetest_id,$geetest_key);
+    $user_id=$_SESSION['geetest']['user_id'];
+    if ($_SESSION['geetest']['gtserver']==1) {
+        $result=$geetest->success_validate($data['geetest_challenge'], $data['geetest_validate'], $data['geetest_seccode'], $user_id);
+        if ($result) {
+            return true;
+        } else{
+            return false;
+        }
+    }else{
+        if ($geetest->fail_validate($data['geetest_challenge'],$data['geetest_validate'],$data['geetest_seccode'])) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

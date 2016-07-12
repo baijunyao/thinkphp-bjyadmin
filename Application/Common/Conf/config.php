@@ -48,11 +48,13 @@ return array(
     'EMAIL_FROM_NAME'        => '', // 发件人
     'EMAIL_SMTP'             => '', // smtp
     'EMAIL_USERNAME'         => '', // 账号
-    'EMAIL_PASSWORD'         => '', //密码
+    'EMAIL_PASSWORD'         => '', // 密码
 //***********************************其他设置**********************************
     'RONG_IS_DEV'            => true,//是否是在开发中
-    'RONG_DEV_APP_KEY'       => '8luwapkvu3xwl', //融云开发环境下的key    仅供测试使用
-    'RONG_DEV_APP_SECRET'    => '1Aw1D7F6Td25', //融云开发环境下的SECRET  仅供测试使用
+    'RONG_DEV_APP_KEY'       => '8luwapkvu3xwl', //融云开发环境下的key       仅供测试使用
+    'RONG_DEV_APP_SECRET'    => '1Aw1D7F6Td25', //融云开发环境下的SECRET     仅供测试使用
+    'GEETEST_ID'             => '034b9cc862456adf05398821cefc94eb',//极验id  仅供测试使用
+    'GEETEST_KEY'            => 'b7f064b9ae813699de794303f0b0e76f',//极验key 仅供测试使用
     'RONG_PRO_APP_KEY'       => '', //融云生产环境下的key
     'RONG_PRO_APP_SECRET'    => '', //融云生产环境下的SECRET
     'UMENG_IOS_APP_KEY'      => '', //友盟ios AppKey
