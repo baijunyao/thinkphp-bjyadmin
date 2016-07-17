@@ -19,7 +19,7 @@
 10. [thinkphp整合系列之支付宝MD5加密方式扫码支付](http://baijunyao.com/article/75)  
 11. [thinkphp整合系列之支付宝RSA加密方式接收移动支付通知](http://baijunyao.com/article/76)  
 12. [thinkphp整合系列之微信扫码支付](http://baijunyao.com/article/77)  
-13. thinkphp整合系列之微信公众号支付  
+13. [thinkphp整合系列之微信公众号支付](http://baijunyao.com/article/78)  
 14. thinkphp整合系列之极验滑动验证码  
 持续更新中...
 

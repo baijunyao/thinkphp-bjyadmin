@@ -21,7 +21,9 @@ class WeixinpayController extends HomeBaseController{
     }
 
     /**
-     * 公众号支付
+     * 公众号支付 必须以get形式传递 out_trade_no 参数
+     * 示例请看 /Application/Home/Controller/IndexController.class.php
+     * 中的wexinpay_js方法
      */
     public function pay(){
         // 导入微信支付sdk
