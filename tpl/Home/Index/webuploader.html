@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thinkphp整合系列之webuploader异步预览上传</title>
+    <webuploadercss />
+</head>
+<body>
+
+<form action="{:U('Home/Index/webuploader')}" method="post">
+    <webuploader name="image" url="{:U('Home/Index/ajax_upload')}" word="或将照片拖到这里，单次最多可选300张" />
+    <input type="submit" value="提交">
+</form>
+
+
+<webuploaderjs />
+</body>
+</html>

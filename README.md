@@ -21,6 +21,7 @@
 12. [thinkphp整合系列之微信扫码支付](http://baijunyao.com/article/77)  
 13. [thinkphp整合系列之微信公众号支付](http://baijunyao.com/article/78)  
 14. [thinkphp整合系列之极验滑动验证码](http://baijunyao.com/article/79)  
+15. [thinkphp整合系列之webuploader异步预览上传](http://baijunyao.com/article/80)  
 持续更新中...
 
 ## 使用说明

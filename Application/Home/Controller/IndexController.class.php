@@ -218,6 +218,7 @@ class IndexController extends HomeBaseController{
      * webuploader 上传文件
      */
     public function ajax_upload(){
+        // 根据自己的业务调整上传路径、允许的格式、文件大小
         ajax_upload('/Upload/image/');
     }
 
@@ -225,8 +226,17 @@ class IndexController extends HomeBaseController{
      * webuploader 上传demo
      */
     public function webuploader(){
-        $image=I('post.image');
-        p($image);
+        // 如果是post提交则显示上传的文件 否则显示上传页面
+        if(IS_POST){
+            $image=I('post.image');
+            // 判断是否有文件上传
+            if (empty($image)) {
+                die('没有上传文件');
+            }
+            echo '上传成功路径为：'.$image;
+        }else{
+            $this->display();
+        }
     }
 
 

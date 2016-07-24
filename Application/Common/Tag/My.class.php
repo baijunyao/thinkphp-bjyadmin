@@ -305,7 +305,10 @@ php;
 
     /**
      * 上传标签
-     * @param string $tag  url上传的图片处理的控制器 name 表单name
+     * @param string $tag  
+     * url：上传的图片处理的控制器方法   
+     * name：表单name   
+     * word：提示文字
      */
     public function _webuploader($tag){
         $url=isset($tag['url'])?$tag['url']:U('Home/Index/ajax_upload');
