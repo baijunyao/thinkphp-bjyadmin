@@ -214,5 +214,23 @@ class IndexController extends HomeBaseController{
         echo intval(geetest_chcek_verify($data));
     }
 
+    /**
+     * webuploader 上传文件
+     */
+    public function ajax_upload(){
+        ajax_upload('/Upload/image/');
+    }
+
+    /**
+     * webuploader 上传demo
+     */
+    public function webuploader(){
+        $image=I('post.image');
+        p($image);
+    }
+
+
+
+
 }
 

@@ -308,7 +308,7 @@ php;
      * @param string $tag  url上传的图片处理的控制器 name 表单name
      */
     public function _webuploader($tag){
-        $url=isset($tag['url'])?$tag['url']:U('Home/Index/upload');
+        $url=isset($tag['url'])?$tag['url']:U('Home/Index/ajax_upload');
         $name=isset($tag['name'])?$tag['name']:'file_name';
         $word=isset($tag['word'])?$tag['word']:'或将照片拖到这里，单次最多可选300张';
         $id_name='upload-'.uniqid();

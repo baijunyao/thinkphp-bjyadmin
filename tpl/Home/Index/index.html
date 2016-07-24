@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>简易登录界面 - bjyadmin</title>
     <bootstrapcss />
+    <webuploadercss />
     <style type="text/css">
         .box{
             margin-top: 50px;
@@ -201,8 +202,21 @@
         <div id="captcha"></div>
     </form>
 </div>
+
+<div class="box">
+    <h4>
+        <a target="_blank" href="http://baijunyao.com/article/80">thinkphp整合系列之webuploader异步预览上传</a>
+    </h4>
+    <form id="geetest" action="{:U('Home/Index/webuploader')}" method="post">
+        <webuploader name="image" />
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+
 <bootstrapjs />
 <script src="http://static.geetest.com/static/tools/gt.js"></script>
+<webuploaderjs />
 <script>
     var handler = function (captchaObj) {
         // 将验证码加到id为captcha的元素里
