@@ -31,7 +31,7 @@ class Weixinpay {
             'appid'=>$weixinpay_config['APPID'],
             'mch_id'=>$weixinpay_config['MCHID'],
             'nonce_str'=>'test',
-            'spbill_create_ip'=>$_SERVER['REMOTE_ADDR'],
+            'spbill_create_ip'=>'192.168.0.1',
             'notify_url'=>$weixinpay_config['NOTIFY_URL']
             );
         // 合并配置数据和订单数据
@@ -45,15 +45,21 @@ class Weixinpay {
         $ch = curl_init ($url);
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 兼容本地没有指定curl.cainfo路径的错误
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
         $response = curl_exec($ch);
         if(curl_errno($ch)){
-            print curl_error($ch);
+            // 显示报错信息；终止继续执行
+            die(curl_error($ch));
         }
         curl_close($ch);
         $result=$this->toArray($response);
+        // 显示错误信息
+        if ($result['return_code']=='FAIL') {
+            die('appid参数长度有误');
+        }
         $result['sign']=$sign;
         $result['nonce_str']='test';
         return $result;
