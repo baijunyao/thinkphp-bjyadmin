@@ -83,7 +83,7 @@ class IndexController extends HomeBaseController{
     /**
      * 微信 公众号jssdk支付
      */
-    public function wexinpay_js(){
+    public function weixinpay_js(){
         // 此处根据实际业务情况生成订单 然后拿着订单去支付
 
         // 用时间戳虚拟一个订单号  （请根据实际业务更改）
@@ -97,7 +97,7 @@ class IndexController extends HomeBaseController{
     /**
      * 微信 扫描支付
      */
-    public function wexinpay_qrcode(){
+    public function weixinpay_qrcode(){
         // 此处根据实际业务情况生成订单 然后拿着订单去支付
 
         // 虚拟的订单 请根据实际业务更改
