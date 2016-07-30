@@ -7,7 +7,7 @@ return array(
     'LOAD_EXT_CONFIG'        => 'db,alipay,oauth',               // 加载网站设置文件
     'TMPL_PARSE_STRING'      => array(                           // 定义常用路径
         '__OSS__'            => OSS_URL,
-        '__PUBLIC__'         => OSS_URL.'/Public',
+        '__PUBLIC__'         => OSS_URL.__ROOT__.'/Public',
         '__HOME_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/css',
         '__HOME_JS__'        => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/js',
         '__HOME_IMAGES__'    => OSS_URL.trim(TMPL_PATH,'.').'Home/Public/images',
