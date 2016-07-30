@@ -25,8 +25,11 @@ class IndexController extends HomeBaseController{
                 $this->success('登录成功、前往管理后台',U('Admin/Index/index'));
             }
         }else{
-            echo '当前状态：';
-            echo check_login() ? $_SESSION['user']['username'].'已登录' : '未登录';
+            $data=check_login() ? $_SESSION['user']['username'].'已登录' : '未登录';
+            $assign=array(
+                'data'=>$data
+                );
+            $this->assign($assign);
             $this->display();
         }
 	}
