@@ -24,6 +24,17 @@
 15. [thinkphp整合系列之webuploader异步预览上传](http://baijunyao.com/article/80)  
 持续更新中...
 
+## 相关文章
+1. [thinkphp的目录结构设计经验总结](http://baijunyao.com/article/60)
+2. [thinkphp的model模型的设计经验总结](http://baijunyao.com/article/61)
+3. [总结thinkphp快捷查询getBy、getField、getFieldBy用法及场景](http://baijunyao.com/article/59)
+4. [解决thinkphp设置session周期无效的问题](http://baijunyao.com/article/44)
+5. [Thinkphp设置仅在调试模式关闭时显示404页面](http://baijunyao.com/article/70)  
+6. [thinkphp简洁、美观、靠谱的分页类](http://baijunyao.com/article/25)  
+7. [thinkphp自定义模板标签(一)](http://baijunyao.com/article/21)  
+8. [thinkphp自定义模板标签(二)](http://baijunyao.com/article/22)  
+持续更新中...
+
 ## 使用说明
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；
 2. 默认用户名：admin   密码：123456
