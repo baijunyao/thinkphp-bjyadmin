@@ -1230,7 +1230,7 @@ function create_xls($data,$filename='simple.xls'){
 /**
  * 数据转csv格式的excle
  * @param  array $data      需要转的数组
- * @param  string $filename 生成的excel文件名
+ * @param  string $header   要生成的excel表头
  * @param  string $filename 生成的excel文件名
  *      示例数组：
         $data = array(
@@ -1238,14 +1238,23 @@ function create_xls($data,$filename='simple.xls'){
             '6,7,8,9,0',
             '1,3,5,6,7'
             );
+        $header='用户名,密码,头像,性别,手机号';
  */
-function create_csv($data,$filename='simple.csv',$header){
+function create_csv($data,$header=null,$filename='simple.csv'){
+    // 如果手动设置表头；则放在第一行
+    if (!is_null($header)) {
+        array_unshift($data, $header);
+    }
     // 防止没有添加文件后缀
     $filename=str_replace('.csv', '', $filename).'.csv';
     Header( "Content-type:  application/octet-stream ");
     Header( "Accept-Ranges:  bytes ");
     Header( "Content-Disposition:  attachment;  filename=".$filename);
     foreach( $data as $k => $v){
+        // 如果是二维数组；转成一维
+        if (is_array($v)) {
+            $v=implode(',', $v);
+        }
         // 替换掉换行
         $v=preg_replace('/\s*/', '', $v); 
         // 转成gbk以兼容office乱码的问题
