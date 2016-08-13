@@ -1231,14 +1231,15 @@ function create_xls($data,$filename='simple.xls'){
  * 数据转csv格式的excle
  * @param  array $data      需要转的数组
  * @param  string $filename 生成的excel文件名
+ * @param  string $filename 生成的excel文件名
  *      示例数组：
-        $a = array(
+        $data = array(
             '1,2,3,4,5',
             '6,7,8,9,0',
             '1,3,5,6,7'
             );
  */
-function create_csv($data,$filename='simple.csv'){
+function create_csv($data,$filename='simple.csv',$header){
     // 防止没有添加文件后缀
     $filename=str_replace('.csv', '', $filename).'.csv';
     Header( "Content-type:  application/octet-stream ");
