@@ -182,6 +182,18 @@ class IndexController extends HomeBaseController{
     }
 
     /**
+     * 导入excel数据
+     */
+    public function import(){
+        // 导入csv格式的数据
+        $data=import_excel('./Upload/excel/simple.csv');
+        p($data);
+        // 导入xls格式的数据
+        $data=import_excel('./Upload/excel/simple.xls');
+        p($data);die;
+    }
+
+    /**
      * geetest生成验证码
      */
     public function geetest_show_verify(){
