@@ -242,7 +242,12 @@ class IndexController extends HomeBaseController{
         }
     }
 
-
+    /**
+     * 用来做测试用
+     */
+    public function test(){
+        
+    }
 
 
 }
