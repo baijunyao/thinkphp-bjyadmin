@@ -403,7 +403,7 @@ jQuery(function() {
         pick: {
             id: "#$id_name .filePicker",
             label: '点击选择文件',
-            multiple : false
+            multiple : true
         },
         dnd: "#$id_name .queueList",
         paste: document.body,
