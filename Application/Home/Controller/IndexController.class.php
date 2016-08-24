@@ -182,15 +182,22 @@ class IndexController extends HomeBaseController{
     }
 
     /**
-     * 导入excel数据
+     * 导入xls格式的数据 
+     * 也可以用来导入csv格式的数据
+     * 但是csv建议使用 下面的import_csv 效率更高
      */
-    public function import(){
-        // 导入csv格式的数据
-        $data=import_excel('./Upload/excel/simple.csv');
-        p($data);
-        // 导入xls格式的数据
+    public function import_xls(){
         $data=import_excel('./Upload/excel/simple.xls');
-        p($data);die;
+        p($data);
+    }
+
+    /**
+     * 导入csv格式的数据
+     */
+    public function import_csv(){
+        $data=file_get_contents('./Upload/excel/simple.csv');
+        $data=explode("\r\n", $data);
+        p($data);
     }
 
     /**
