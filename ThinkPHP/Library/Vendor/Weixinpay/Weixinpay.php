@@ -58,7 +58,7 @@ class Weixinpay {
         $result=$this->toArray($response);
         // 显示错误信息
         if ($result['return_code']=='FAIL') {
-            die('appid参数长度有误');
+            die($result['return_msg']);
         }
         $result['sign']=$sign;
         $result['nonce_str']='test';
@@ -154,6 +154,8 @@ class Weixinpay {
      * @return array jssdk需要用到的数据
      */
     public function getParameters(){
+        // 获取配置项
+        $config=$this->config;
         // 如果没有get参数没有code；则重定向去获取openid；
         if (!isset($_GET['code'])) {
             // 获取订单号
