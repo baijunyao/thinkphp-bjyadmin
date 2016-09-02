@@ -45,7 +45,7 @@ php;
      */
     public function _jquery(){
         $str=<<<php
-<script src="//libs.useso.com/js/jquery/1.10.2/jquery.min.js"></script>     
+<script src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>    
 php;
         return $str;
     }
