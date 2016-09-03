@@ -499,7 +499,6 @@ jQuery(function() {
 
             // 成功
             if ( cur === 'error' || cur === 'invalid' ) {
-                console.log( file.statusText );
                 showError( file.statusText );
                 percentages[ file.id ][ 1 ] = 1;
             } else if ( cur === 'interrupt' ) {
@@ -625,6 +624,9 @@ jQuery(function() {
             if ( stats.uploadFailNum ) {
                 text += '，失败' + stats.uploadFailNum + '个';
             }
+            if (fileCount==stats.successNum && stats.successNum!=0) {
+                $('#$id_name .webuploader-element-invisible').remove();
+            }
         }
 
         \$info.html( text );
@@ -638,7 +640,6 @@ jQuery(function() {
     }
 
     uploader.onUploadSuccess=function(file ,response){
-        console.log(file);
         \$('#'+file.id +' .bjy-filename').val(response.name)
     }
     uploader.onUploadError=function(file){
