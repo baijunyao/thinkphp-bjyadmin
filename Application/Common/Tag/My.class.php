@@ -317,7 +317,6 @@ php;
         $id_name='upload-'.uniqid();
             $str=<<<php
 <div id="$id_name" class="xb-uploader">
-    <input type="hidden" name="$name">
     <div class="queueList">
         <div class="placeholder">
             <div class="filePicker"></div>
@@ -331,11 +330,11 @@ php;
         </div>
         <div class="info"></div>
         <div class="btns">
-<div class="webuploader-container filePicker2">
-    <div class="webuploader-pick">继续添加</div>
-    <div style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;" id="rt_rt_1armv2159g1o1i9c2a313hadij6">
-    </div>
-</div>
+            <div class="webuploader-container filePicker2">
+                <div class="webuploader-pick">继续添加</div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;" id="rt_rt_1armv2159g1o1i9c2a313hadij6">
+                </div>
+            </div>
             <div class="uploadBtn">开始上传</div>
         </div>
     </div>
@@ -394,7 +393,7 @@ jQuery(function() {
             s = null;
             return r;
         })(),
-
+        thisSuccess,
         // WebUploader实例
         uploader;
 
@@ -442,6 +441,7 @@ jQuery(function() {
                 '<p class="title">' + file.name + '</p>' +
                 '<p class="imgWrap"></p>'+
                 '<p class="progress"><span></span></p>' +
+                '<input class="bjy-filename" type="hidden" name="{$name}[]">'+
                 '</li>' ),
 
             \$btns = \$('<div class="file-panel">' +
@@ -638,7 +638,8 @@ jQuery(function() {
     }
 
     uploader.onUploadSuccess=function(file ,response){
-        fileName=response.name;
+        console.log(file);
+        \$('#'+file.id +' .bjy-filename').val(response.name)
     }
     uploader.onUploadError=function(file){
         alert(fileError);
@@ -696,7 +697,7 @@ jQuery(function() {
             case 'finish':
                 stats = uploader.getStats();
                 if ( stats.successNum ) {
-                    \$("#$id_name input[name='$name']").val(fileName);
+                    
                 } else {
                     // 没有成功的图片，重设
                     state = 'done';

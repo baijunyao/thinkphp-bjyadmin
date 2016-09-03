@@ -250,12 +250,7 @@ class IndexController extends HomeBaseController{
     public function webuploader(){
         // 如果是post提交则显示上传的文件 否则显示上传页面
         if(IS_POST){
-            $image=I('post.image');
-            // 判断是否有文件上传
-            if (empty($image)) {
-                die('没有上传文件');
-            }
-            echo '上传成功路径为：'.$image;
+            p($_POST);die;
         }else{
             $this->display();
         }
