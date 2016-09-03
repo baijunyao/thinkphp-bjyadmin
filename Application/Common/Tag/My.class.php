@@ -331,6 +331,11 @@ php;
         </div>
         <div class="info"></div>
         <div class="btns">
+<div class="webuploader-container filePicker2">
+    <div class="webuploader-pick">继续添加</div>
+    <div style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;" id="rt_rt_1armv2159g1o1i9c2a313hadij6">
+    </div>
+</div>
             <div class="uploadBtn">开始上传</div>
         </div>
     </div>
@@ -426,10 +431,10 @@ jQuery(function() {
     });
 
     // 添加“添加文件”的按钮，
-    // uploader.addButton({
-    //    id: "#$id_name .filePicker2",
-    //    label: '继续添加'
-    // });
+    uploader.addButton({
+       id: "#$id_name .filePicker2",
+       label: '继续添加'
+    });
 
     // 当有文件添加进来时执行，负责view的创建
     function addFile( file ) {
