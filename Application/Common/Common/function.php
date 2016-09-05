@@ -655,12 +655,13 @@ function get_page_data($model,$map,$order='',$limit=10){
     return $data;
 }
 
-// *
- // * @param  string   $path    字符串 保存文件路径示例： /Upload/image/
- // * @param  string   $format  文件格式限制
- // * @param  integer  $maxSize 允许的上传文件最大值 52428800
- // * @return booler            返回ajax的json格式数据
- 
+/**
+ * 处理post上传的文件；并返回路径
+ * @param  string $path    字符串 保存文件路径示例： /Upload/image/
+ * @param  string $format  文件格式限制
+ * @param  string $maxSize 允许的上传文件最大值 52428800
+ * @return array           返回ajax的json格式数据
+ */
 function post_upload($path='file',$format='empty',$maxSize='52428800'){
     ini_set('max_execution_time', '0');
     // 去除两边的/
