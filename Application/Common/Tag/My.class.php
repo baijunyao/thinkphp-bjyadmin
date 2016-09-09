@@ -287,7 +287,7 @@ php;
     public function _webuploadercss(){
         $str=<<<php
 <link rel="stylesheet" href="__PUBLIC__/statics/webuploader-0.1.5/xb-webuploader.css">
-<script src="//libs.useso.com/js/jquery/1.10.2/jquery.min.js"></script>
+<script src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>
 php;
         return $str;
     }
