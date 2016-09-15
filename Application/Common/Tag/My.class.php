@@ -27,6 +27,7 @@ class My extends TagLib {
         'webuploadercss'=>array('attr'=>'','close'=>0),
         'webuploader'=>array('attr'=>'name,url,word','close'=>0),
         'webuploaderjs'=>array('attr'=>'','close'=>0),
+        'vue'=>array('attr'=>'','close'=>0)
         );
 
     /**
@@ -46,6 +47,20 @@ php;
     public function _jquery(){
         $str=<<<php
 <script src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>    
+php;
+        return $str;
+    }
+    
+    /**
+     * vue
+     */
+    public function _vue(){
+        $str=<<<php
+<script src="__PUBLIC__/statics/vue/vue.js"></script>    
+<script src="__PUBLIC__/statics/vue/vue-resource.min.js"></script> 
+<script>
+    Vue.http.options.emulateJSON = true;
+</script>    
 php;
         return $str;
     }
