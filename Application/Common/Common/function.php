@@ -1251,6 +1251,7 @@ function create_csv($data,$header=null,$filename='simple.csv'){
     }
     // 防止没有添加文件后缀
     $filename=str_replace('.csv', '', $filename).'.csv';
+    ob_clean();
     Header( "Content-type:  application/octet-stream ");
     Header( "Accept-Ranges:  bytes ");
     Header( "Content-Disposition:  attachment;  filename=".$filename);
