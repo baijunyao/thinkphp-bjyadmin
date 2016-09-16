@@ -513,6 +513,8 @@ function send_email($address,$subject,$content){
     $email_username=C('EMAIL_USERNAME');
     $email_password=C('EMAIL_PASSWORD');
     $email_from_name=C('EMAIL_FROM_NAME');
+    $email_smtp_secure=C('EMAIL_SMTP_SECURE');
+    $email_port=C('EMAIL_PORT');
     if(empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)){
         return array("error"=>1,"message"=>'邮箱配置不完整');
     }
@@ -521,6 +523,10 @@ function send_email($address,$subject,$content){
     $phpmailer=new \Phpmailer();
     // 设置PHPMailer使用SMTP服务器发送Email
     $phpmailer->IsSMTP();
+    // 设置设置smtp_secure
+    $phpmailer->SMTPSecure=$email_smtp_secure;
+    // 设置port
+    $phpmailer->Port=$email_port;
     // 设置为html格式
     $phpmailer->IsHTML(true);
     // 设置邮件的字符编码'
