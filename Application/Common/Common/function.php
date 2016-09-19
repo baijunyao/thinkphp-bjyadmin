@@ -1268,8 +1268,10 @@ function create_csv($data,$header=null,$filename='simple.csv'){
         }
         // 替换掉换行
         $v=preg_replace('/\s*/', '', $v); 
+        // 解决导出的数字会显示成科学计数法的问题
+        $v=str_replace(',', "\t,", $v); 
         // 转成gbk以兼容office乱码的问题
-        echo iconv('UTF-8','GBK',$v)."\r\n";
+        echo iconv('UTF-8','GBK',$v)."\t\r\n";
     }
 }
 
