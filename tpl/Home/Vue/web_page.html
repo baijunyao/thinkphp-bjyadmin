@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 配合thinkphp分页示例</title>
+</head>
+<body>
+<p></p>
+<p></p>
+<div class="box">
+    <p v-for="item in city">{{item.name}}</p>
+</div>
+
+<p class="over" style="display: none;">没有数据了</p>
+
+<vue />
+<script>
+
+// 获取数据的url
+var pageData={
+    url: "{:U('Home/Vue/page')}",
+    i: 1,
+    height: 0,
+    over: false
+}
+var vm=new Vue({
+    el: '.box',
+    data: {
+        city: []
+    },
+    ready: function(){
+        this.$http.get(pageData.url).then(function(response){
+            this.city=response.data;
+        })
+    },
+})
+
+
+//获取滚动条当前的位置 
+function getScrollTop() { 
+    var scrollTop=0; 
+    if(document.documentElement && document.documentElement.scrollTop){ 
+        scrollTop=document.documentElement.scrollTop; 
+    }else if(document.body) { 
+        scrollTop=document.body.scrollTop; 
+    } 
+    return scrollTop; 
+} 
+
+//获取当前可视范围的高度 
+function getClientHeight() { 
+    var clientHeight=0; 
+    if(document.body.clientHeight && document.documentElement.clientHeight){ 
+        clientHeight=Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
+    }else{ 
+        clientHeight=Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
+    } 
+    return clientHeight; 
+} 
+
+//获取文档完整的高度 
+function getScrollHeight() { 
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
+} 
+
+// 添加 加载中样式
+function addLoading(){
+    var loading=document.createElement('p');
+    loading.className='loading'
+    loading.innerHTML='加载中...';
+    document.body.appendChild(loading);
+}
+
+// 删除 加载中样式
+function removeLoading(){
+    var loading=document.querySelector('.loading');
+    loading.parentNode.removeChild(loading);
+}
+
+// 把加载中 改成 没有数据了
+function loadingToOver(){
+    var loading=document.querySelector('.over');
+    loading.style.display='block';
+}
+
+// 监听滚动事件
+window.onscroll=function () {
+    if (pageData.over) {
+        return false;
+    }
+    if ( getScrollHeight()-(getScrollTop()+getClientHeight())<=50 ) {
+        // 页数+1
+        pageData.i++
+        // 显示加载
+        addLoading();
+        // 获取下一页的数据
+        vm.$http.get(pageData.url+'/p/'+pageData.i).then(function(response){
+            removeLoading();
+            if(response.data.length==0){
+                pageData.over=true;
+                loadingToOver();
+            }else{
+                vm.city=vm.city.concat(response.data); 
+            }
+        })
+    } 
+} 
+
+
+</script>
+</body>
+</html>
