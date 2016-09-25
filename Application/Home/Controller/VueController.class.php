@@ -22,7 +22,7 @@ class VueController extends HomeBaseController{
         // 获取总条数
         $count=M('Province_city_area')->count();
         // 每页多少条数据
-        $limit=100;
+        $limit=200;
         $page=new \Org\Nx\Page($count,$limit);
         $data=M('Province_city_area')
             ->limit($page->firstRow.','.$page->listRows)
