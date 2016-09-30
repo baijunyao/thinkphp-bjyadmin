@@ -34,6 +34,7 @@
 6. [thinkphp简洁、美观、靠谱的分页类](http://baijunyao.com/article/25)  
 7. [thinkphp自定义模板标签(一)](http://baijunyao.com/article/21)  
 8. [thinkphp自定义模板标签(二)](http://baijunyao.com/article/22)  
+9. [thinkphp把模板文件View独立出来](http://baijunyao.com/article/90)  
 持续更新中...
 
 ## 使用说明
