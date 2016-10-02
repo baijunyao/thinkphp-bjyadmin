@@ -35,6 +35,7 @@
 7. [thinkphp自定义模板标签(一)](http://baijunyao.com/article/21)  
 8. [thinkphp自定义模板标签(二)](http://baijunyao.com/article/22)  
 9. [thinkphp把模板文件View独立出来](http://baijunyao.com/article/90)  
+10. [对照着jquery来学vue.js系列之配合thinkphp下拉获取分页数据](http://baijunyao.com/article/88)  
 持续更新中...
 
 ## 使用说明
