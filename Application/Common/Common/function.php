@@ -912,7 +912,7 @@ function file_category($str){
  */
 function get_min_image_path($file_path,$width=170,$height=170){
     $min_path=str_replace('.', '_'.$width.'_'.$height.'.', trim($file_path,'.'));
-    $min_path='http://xueba17.oss-cn-beijing.aliyuncs.com'.$min_path;
+    $min_path=OSS_URL.$min_path;
     return $min_path;
 } 
 
