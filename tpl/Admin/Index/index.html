@@ -23,6 +23,11 @@
         <script src="__ADMIN_ACEADMIN__/js/html5shiv.js"></script>
         <script src="__ADMIN_ACEADMIN__/js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        #sidebar .nav-list{
+            overflow-y: auto;
+        }
+    </style>
 </head>
 
 <body style="overflow-y: hidden;">
@@ -216,6 +221,9 @@ $(function(){
     // 动态调整iframe的高度以适应不同高度的显示器
     $('.page-content,.main-content').height($(window).height());
     $('.page-content').css('padding-bottom',50);
+
+    // 左侧菜单自动适应高度
+    $('#sidebar .nav-list').height($(window).height());
 })
 </script>
 </body>
