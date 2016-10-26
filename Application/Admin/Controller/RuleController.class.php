@@ -25,8 +25,12 @@ class RuleController extends AdminBaseController{
     public function add(){
         $data=I('post.');
         unset($data['id']);
-        D('AuthRule')->addData($data);
-        $this->success('添加成功',U('Admin/Rule/index'));
+        $result=D('AuthRule')->addData($data);
+        if ($result) {
+            $this->success('添加成功',U('Admin/Rule/index'));
+        }else{
+            $this->error('添加失败');
+        }
     }
 
     /**
@@ -37,8 +41,12 @@ class RuleController extends AdminBaseController{
         $map=array(
             'id'=>$data['id']
             );
-        D('AuthRule')->editData($map,$data);
-        $this->success('修改成功',U('Admin/Rule/index'));
+        $result=D('AuthRule')->editData($map,$data);
+        if ($result) {
+            $this->success('修改成功',U('Admin/Rule/index'));
+        }else{
+            $this->error('修改失败');
+        }
     }
 
     /**
@@ -76,8 +84,12 @@ class RuleController extends AdminBaseController{
     public function add_group(){
         $data=I('post.');
         unset($data['id']);
-        D('AuthGroup')->addData($data);
-        $this->success('添加成功',U('Admin/Rule/group'));
+        $result=D('AuthGroup')->addData($data);
+        if ($result) {
+            $this->success('添加成功',U('Admin/Rule/group'));
+        }else{
+            $this->error('添加失败');
+        }
     }
 
     /**
@@ -88,8 +100,12 @@ class RuleController extends AdminBaseController{
         $map=array(
             'id'=>$data['id']
             );
-        D('AuthGroup')->editData($map,$data);
-        $this->success('修改成功',U('Admin/Rule/group'));
+        $result=D('AuthGroup')->editData($map,$data);
+        if ($result) {
+            $this->success('修改成功',U('Admin/Rule/group'));
+        }else{
+            $this->error('修改失败');
+        }
     }
 
     /**
@@ -100,8 +116,12 @@ class RuleController extends AdminBaseController{
         $map=array(
             'id'=>$id
             );
-        D('AuthGroup')->deleteData($map);
-        $this->success('删除成功',U('Admin/Rule/group'));
+        $result=D('AuthGroup')->deleteData($map);
+        if ($result) {
+            $this->success('删除成功',U('Admin/Rule/group'));
+        }else{
+            $this->error('删除失败');
+        }
     }
 
 //*****************权限-用户组*****************
@@ -115,8 +135,12 @@ class RuleController extends AdminBaseController{
                 'id'=>$data['id']
                 );
             $data['rules']=implode(',', $data['rule_ids']);
-            D('AuthGroup')->editData($map,$data);
-            $this->success('操作成功',U('Admin/Rule/group'));
+            $result=D('AuthGroup')->editData($map,$data);
+            if ($result) {
+                $this->success('操作成功',U('Admin/Rule/group'));
+            }else{
+                $this->error('操作失败');
+            }
         }else{
             $id=I('get.id');
             // 获取用户组数据
@@ -178,8 +202,12 @@ class RuleController extends AdminBaseController{
      */
     public function delete_user_from_group(){
         $map=I('get.');
-        D('AuthGroupAccess')->deleteData($map);
-        $this->success('操作成功',U('Admin/Rule/admin_user_list'));
+        $result=D('AuthGroupAccess')->deleteData($map);
+        if ($result) {
+            $this->success('操作成功',U('Admin/Rule/admin_user_list'));
+        }else{
+            $this->error('操作失败');
+        }
     }
 
     /**

@@ -23,8 +23,12 @@ class NavController extends AdminBaseController{
 	public function add(){
 		$data=I('post.');
 		unset($data['id']);
-		D('AdminNav')->addData($data);
-		$this->success('添加成功',U('Admin/Nav/index'));
+		$result=D('AdminNav')->addData($data);
+		if ($result) {
+			$this->success('添加成功',U('Admin/Nav/index'));
+		}else{
+			$this->error('添加失败');
+		}
 	}
 
 	/**
@@ -35,8 +39,12 @@ class NavController extends AdminBaseController{
 		$map=array(
 			'id'=>$data['id']
 			);
-		D('AdminNav')->editData($map,$data);
-		$this->success('修改成功',U('Admin/Nav/index'));
+		$result=D('AdminNav')->editData($map,$data);
+		if ($result) {
+			$this->success('修改成功',U('Admin/Nav/index'));
+		}else{
+			$this->error('修改失败');
+		}
 	}
 
 	/**
@@ -60,8 +68,12 @@ class NavController extends AdminBaseController{
 	 */
 	public function order(){
 		$data=I('post.');
-		D('AdminNav')->orderData($data);
-		$this->success('排序成功',U('Admin/Nav/index'));
+		$result=D('AdminNav')->orderData($data);
+		if ($result) {
+			$this->success('排序成功',U('Admin/Nav/index'));
+		}else{
+			$this->error('排序失败');
+		}
 	}
 
 
