@@ -1,3 +1,8 @@
+## 链接
+- 博客：http://baijunyao.com   
+- github：https://github.com/baijunyao/thinkphp-bjyadmin   
+- oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin   
+
 ## 简介
 使用thinkphp开发项目的过程中把一些常用的功能或者第三方sdk整合好；开源供亲们参考;
 这些都是经过线上运营考验的；无毒害可以免费放心折腾使用；只要不会某一天找到我说因为借鉴了这个开源产品的一些方法；而导致了好几个亿的损失；要我负责并赔偿就好；￣へ￣  
@@ -83,11 +88,6 @@
 `<jquery />`标签可引入jQuery  
 不知道怎么自定义标签？传送门：http://baijunyao.com/article/21   
 更多标签可以查看 /Application/Common/Tag/My.class.php 源代码
-
-## 链接
-- 官网：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyadmin   
-- oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin   
 
 ## 商业友好的开源协议
 bjyadmin遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
