@@ -934,7 +934,7 @@ function in_iarray($str,$array){
 /**
  * 传入时间戳,计算距离现在的时间
  * @param  number $time 时间戳
- * @return string       返回多少以前
+ * @return string     返回多少以前
  */
 function word_time($time) {
     $time = (int) substr($time, 0, 10);
@@ -948,6 +948,8 @@ function word_time($time) {
         $str = sprintf('%d分钟前', floor($int / 60));
     }elseif ($int < 86400){
         $str = sprintf('%d小时前', floor($int / 3600));
+    }elseif ($int < 1728000){
+        $str = sprintf('%d天前', floor($int / 86400));
     }else{
         $str = date('Y-m-d H:i:s', $time);
     }
