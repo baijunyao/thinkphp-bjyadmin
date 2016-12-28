@@ -11,13 +11,9 @@ class Weixinpay {
     private $config=array();
 
     // 构造函数
-    public function __construct($config){
+    public function __construct(){
         // 如果配置项为空 则直接返回
-        if (empty($config)) {
-            $this->config=C('WEIXINPAY_CONFIG');
-        }else{
-            $this->config=$config;
-        }
+        $this->config=C('WEIXINPAY_CONFIG');
     }
 
     /**
