@@ -1,0 +1,33 @@
+{
+  "name": "baijunyao/thinkphp-bjyadmin",
+  "version": "1.0.0",
+  "description": "白俊遥博客",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "白俊遥",
+    "博客"
+  ],
+  "author": "baijunyao",
+  "license": "Apache2",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cleanhtml": "^1.0.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-decomment": "^0.1.3",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-less": "^3.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
