@@ -35,7 +35,7 @@ gulp.task('js', function() {
 
 // 压缩全部html
 gulp.task('html', function () {
-    gulp.src(src+'/**/*.html')
+    gulp.src(src+'/**/*.+(html|tpl)')
     .pipe(clearnHtml())
     .pipe(gulp.dest(dist));
 });
@@ -49,7 +49,7 @@ gulp.task('image', function () {
 
 // 其他不编译的文件直接copy
 gulp.task('copy', function () {
-    gulp.src(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html)')
+    gulp.src(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html|tpl)')
     .pipe(copy())
     .pipe(gulp.dest(dist));
 });
@@ -70,7 +70,7 @@ gulp.task('server', function() {
     gulp.watch(src+"/**/*.js", ['js']).on("change", reload);
 
     // 监听html文件变化后刷新页面
-    gulp.watch(src+"/**/*.html", ['html']).on("change", reload);
+    gulp.watch(src+"/**/*.+(html|tpl)", ['html']).on("change", reload);
 
     // 监听css文件变化后刷新页面
     gulp.watch(dist+"/**/*.css").on("change", reload);
