@@ -61,7 +61,10 @@ gulp.task('server', function() {
         notify: false, // 刷新不弹出提示
     });
     // 监听scss文件编译
-    gulp.watch(src+'/**/*.scss', ['css']);   
+    gulp.watch(src+'/**/*.scss', ['css']);
+
+    // 监听其他不编译的文件 有变化直接copy
+    gulp.watch(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html)', ['copy']);   
 
     // 监听html文件变化后刷新页面
     gulp.watch(src+"/**/*.js", ['js']).on("change", reload);
@@ -74,4 +77,4 @@ gulp.task('server', function() {
 });
 
 // 监听事件
-gulp.task('default', ['css', 'js', 'image', 'html', 'server'])
+gulp.task('default', ['css', 'js', 'image', 'html', 'copy', 'server'])
