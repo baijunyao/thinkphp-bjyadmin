@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>jsclone示例 - 白俊遥博客</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            border: 1px solid red;
+        }
+        form{
+            margin-bottom: 20px;
+            border-bottom: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <form>
+        日期1：<input class="xb-date" type="text" name="date1">
+        <br />
+        日期2：<input class="xb-date" type="text" name="date2">
+        <br />
+        性别：<input type="radio" name="sex" checked="checked" value="男">男 
+              <input type="radio" name="sex" value="女">女
+        <br />
+        ajax搜索：<input type="text" name="name" onkeyup="search(this)">
+        <button onclick="add(this)" type="button">添加</button>
+    </form>
+
+</div>
+
+<button type="button" onclick="getAllData()">获取全部数据</button>
+
+<script src="/Public/statics/js/jquery-1.10.2.min.js"></script>
+<!-- 引入日期插件开始 -->
+<script src="/Public/statics/laydate-v1.1/laydate.js"></script>
+<script>
+    $('body').attr('id', 'xb-date');
+    laydate.skin("molv");
+    var tody=laydate.now();
+    laydate({
+        elem: '#xb-date .xb-date',
+        event: 'click',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        istime: true,
+        isclear: true,
+        istoday: true,
+        issure: true,
+        festival: true,
+        start: laydate.now(),
+        fixed: false,
+        zIndex: 99999999,
+    })
+</script>
+<!-- 引入日期插件结束 -->
+
+<!-- 业务逻辑实现开始 -->
+<script>
+// 添加
+function add(obj){
+    // 获取需要clone的元素
+    var formObj=$(obj).parents('form').eq(0).clone(true);
+    // 把添加的事件以及文字 改为 删除的事件和文字
+    formObj.find('button').attr('onclick','del(this)').html('删除');
+    // 清空input
+    formObj.find("input[type='text']").val('');
+    // 设置第一个radio选中
+    formObj.find("input[type='radio']").eq(0).prop('checked', 'checked');
+
+    // 插入元素
+    $('.box').append(formObj);
+
+    // 激活新插入元素的日期插件事件
+    laydate({
+        elem: '#xb-date .xb-date',
+        event: 'click',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        istime: true,
+        isclear: true,
+        istoday: true,
+        issure: true,
+        festival: true,
+        start: laydate.now(),
+        fixed: false,
+        zIndex: 99999999
+    })
+}
+
+// 删除
+function del(obj){
+    $(obj).parents('form').eq(0).remove();
+}
+
+// ajax搜索
+function search(obj){
+    var str=$(obj).val();
+    alert('ajax搜索'+str);
+
+    // 下面写ajax搜索
+}
+
+// 获取全部数据 组合成数组
+function getAllData(){
+    var postData=[];
+    $('.box form').each( function(index, val) {
+        postData[index]=getForm(val);
+    });
+    
+    // 以字符串的形式弹出查看 删掉即可
+    alert(JSON.stringify(postData))
+
+    // 下面写ajax 把postData 发送到后台即可
+    console.log(postData);
+    
+}
+
+/**
+ * 获取form中的数据并转为json对象格式
+ * @param  {object} obj form对象
+ * @return {json}       json对象
+ */
+function getForm(obj){
+    var formData=$(obj).serializeArray();
+    var formArray={};
+    $.each(formData, function(index, val) {
+        formArray[val['name']]=val['value'];
+    });
+    return formArray;
+}
+</script>
+<!-- 业务逻辑实现结束 -->
+
+
+</body>
+</html>

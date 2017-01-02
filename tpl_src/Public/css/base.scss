@@ -1,0 +1,512 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+	margin: 0;
+	padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+	font: 12px/1  "微软雅黑",Arial,Tahoma, Helvetica, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+body{
+	position: relative;
+}
+address, cite, dfn, em, var, i{ font-style: normal; } /* 将斜体扶正 */
+
+/* 重置列表元素 */
+ul, ol {
+	list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	transition: all 0.5s ease 0s;
+	color: #0B7DF2;
+}
+
+/* 去除a标签点击后的虚线框 */
+a:focus {
+	outline:none;
+	text-decoration: none;
+	-moz-outline:none;
+}
+
+/* 重置表单元素 */
+
+button, input, select, textarea {
+	font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+input{
+    outline: none;
+}
+/* 重置表格元素 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+	border: none;
+	height: 1px;
+}
+
+/*设置textarea固定大小*/
+textarea{
+	resize: none;
+}
+// img跟文字上下居中对齐
+img{
+	vertical-align: middle
+}
+*{
+	box-sizing: border-box;
+}
+.xb-show{
+	display: block;
+}
+.xb-hide{
+	display: none;
+}
+.xb-hidden{
+	display: none;
+}
+.xb-out{
+	display: table;
+	width: 100%;
+}
+.xb-inside{
+	margin: 0 auto;
+	width: 1100px;
+	display: table;
+}
+.xb-middle-out{
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.xb-middle-inside{
+	display: table-cell;
+	vertical-align: middle;
+}
+.xb-h-5{
+	width: 100%;
+	height: 5px;
+}
+.xb-h-10{
+	width: 100%;
+	height: 10px;
+}
+.xb-h-15{
+	width: 100%;
+	height: 15px;
+}
+.xb-h-20{
+	width: 100%;
+	height: 20px;
+}
+.xb-h-25{
+	width: 100%;
+	height: 25px;
+}
+.xb-h-30{
+	width: 100%;
+	height: 30px;
+}
+.xb-h-35{
+	width: 100%;
+	height: 35px;
+}
+.xb-h-40{
+	width: 100%;
+	height: 40px;
+}
+.xb-h-45{
+	width: 100%;
+	height: 45px;
+}
+.xb-h-50{
+	width: 100%;
+	height: 50px;
+}
+.xb-h-55{
+	width: 100%;
+	height: 55px;
+}
+.xb-h-60{
+	width: 100%;
+	height: 60px;
+}
+.xb-h-65{
+	width: 100%;
+	height: 65px;
+}
+.xb-h-70{
+	width: 100%;
+	height: 70px;
+} 
+.xb-h-100{
+	width: 100%;
+	height: 100px;
+}
+
+// 后台面包屑导航开始
+.bjy-admin-nav{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+// 后台面包屑导航结束
+
+// 通用跳转页面开始
+.bjy-public-jump{
+	margin: 0 auto;
+	padding: 50px 100px;
+	width: 455px;
+	height: 195px;
+	border: 2px solid #00CCC0;
+	border-radius: 4px;
+	text-align: center;
+	.bjy-pj-word{
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		font-size: 16px;
+		b{
+			color: #00CCC0;
+		}
+	}
+}
+// 通用跳转页面结束
+
+// 聊天框emoji表情开始
+.bjy-emoji-box{
+	display: none;
+}
+.bjy-emoji-ico{
+	background: none;
+	border: none;
+}
+.bjy-emoji-imgs{
+	img{
+		padding: 2px;
+	}
+}
+.bjy-show-box{
+    overflow-y: auto;
+}
+.bjy-emoji-out3{
+	.bjy-show-out{
+	    width: 490px;
+	    height: 115px;
+	    background: #fff;
+	    border-bottom: 1px solid #E1E1E1;
+	    z-index: 1;
+	    position: relative;
+	    .bjy-show-box{
+	        width: 490px;
+	        height: 115px;
+	        padding: 10px;
+	        overflow-y: auto;
+	    }
+	    .bjy-emoji-ico{
+	        width: 25px;
+	        height: 25px;
+	        background: url(/tpl/default/User/Public/images/lqk-smile.png);
+	        cursor: pointer;
+	        position: absolute;
+	        left: 15px;
+	        top: 3px;
+	        z-index: 2
+	    }
+	    .bjy-emoji-box{
+	        padding: 0 5px 5px 5px;
+	        width: 480px;
+	        background: #fff;
+	        border: 1px solid #eee;
+	        box-shadow: 2px 2px 6px #8E99A9;
+	        position: absolute;
+	        left: 0;
+	        top: 33px;
+	        z-index: 1;
+	        .bjy-e-triangle{
+	            position: absolute;
+	            left: 7px;
+	            top: -30px;
+	        }
+	        img{
+	        	margin: 2px;
+	            cursor: pointer;
+	        }
+	    }
+	}	
+}
+// 聊天框emoji表情结束
+
+// 聊天框开始
+$background-color:#00ccc0;
+#bjy-chat-modal{
+    .modal-dialog{
+        width: 710px;
+        height: 570px;
+        margin-top: 20px;
+        .modal-content{
+            width: 710px;
+            height: 570px;
+            border-radius: 0;
+            border: none;
+            .bjy-top{
+                width: 710px;
+                height: 45px;
+                background: $background-color;
+                .bjy-t-myinfo{
+                    padding-left: 85px;
+                    width: 220px;
+                    height: 45px;
+                    line-height: 45px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    float: left;
+                    position: relative;
+                    .bjy-t-avatar{
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: 20px;
+                        top: -20px;
+                    }
+                }
+                .bjy-t-title{
+                    width: 490px;
+                    height: 45px;
+                    line-height: 45px;
+                    text-align: center;
+                    float: left;
+                    font-size: 14px;
+                    .bjy-tt-name{
+                        font-weight: 600;
+                    }
+                    .bjy-tt-close{
+                        margin: 10px;
+                        width: 20px;
+                        height: 20px;
+                        background: url('/tpl/default/User/Public/images/f-x.png') no-repeat;
+                        float: right;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .bjy-chat{
+                width: 710px;
+                height: 525px;
+                .bjy-friend-list{
+                    width: 220px;
+                    height: 525px;
+                    float: left;
+                    background: url(/Public/statics/rongcloud/images/bg_left.min.png);
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    .bjy-fl-one{
+                        padding: 15px 5px 15px 10px;
+                        width: 220px;
+                        height: 65px;
+                        border-bottom: 2px solid #C3E8F0;
+                        cursor: pointer;
+                        .bjy-flo-avatar{
+                            margin-right: 10px;
+                            width: 35px;
+                            height: 35px;
+                            float: left;
+                            position: relative;
+                            .bjy-floa-img{
+                                width: 35px;
+                                height: 35px;
+                                border-radius: 3px;
+                            }
+                            .bjy-floa-approve{
+                                width: 15px;
+                                height: 15px;
+                                position: absolute;
+                                right: -2px;
+                                bottom: -2px;
+                            }
+                            .bjy-flo-count{
+                                width: 15px;
+                                height: 15px;
+                                line-height: 15px;
+                                text-align: center;
+                                background: #ff4f5f;
+                                border-radius: 50%;
+                                color: #fff;
+                                position: absolute;
+                                right: -2px;
+                                top: -2px;
+                                display: none;
+                            }
+                            .xb-show{
+                                display: block;
+                            }
+                        }
+                        .bjy-flo-info{
+                            width: 160px;
+                            height: 35px;
+                            font-size: 14px;
+                            float: left;
+                            .bjy-flo-username{
+                                width: 160px;
+                                height: 15px;
+                                .bjy-flou-time{
+                                    float: right;
+                                    font-size: 12px;
+                                }
+                            }
+                            .bjy-flo-school{
+                                margin-top: 5px;
+                                width: 160px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                    .bjy-flo-checked{
+                        background: #fff;
+                    }
+                }
+                .bjy-chat-box{
+                    width: 490px;
+                    height: 525px;
+                    float: left;
+                    .bjy-cb-history{
+                        padding: 10px;
+                        width: 490px;
+                        height: 325px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        .bjy-cbh-one{
+                            margin-bottom: 20px;
+                            padding: 0 50px;
+                            width: 470px;
+                            position: relative;
+                            .bjy-cbhl-avatar{
+                                width: 50px;
+                                height: 50px;
+                                position: absolute;
+                                .bjy-cbhla-img{
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 3px;
+                                }   
+                                .bjy-cbhla-approve{
+                                    width: 15px;
+                                    height: 15px;
+                                    position: absolute;
+                                }
+                                .bjy-cbhla-triangle{
+                                    width: 10px;
+                                    height: 20px;
+                                    position: absolute;
+                                }
+                            }    
+                            .bjy-cbhl-content{
+                                width: 370px;
+                                line-height: 20px;
+                                padding: 10px;
+                                border-radius: 5px;
+                                font-size: 14px;
+                            }                    
+                        }
+                        .bjy-cbhla-left{
+                            .bjy-cbhl-avatar{
+                                left: 0px;
+                                top: 0;                                    
+                                .bjy-cbhla-approve{
+                                    left: 22px;
+                                    top: 22px;
+                                }
+                                .bjy-cbhla-triangle{
+                                    left: 44px;
+                                    top: 10px;
+                                    background: url('/Public/statics/rongcloud/images/triangle-left-bjy.png') no-repeat;
+                                } 
+                            }     
+                            .bjy-cbhl-content{
+                                background: #e6ecff;
+                            }                          
+                        }
+                        .bjy-cbhla-right{
+                            .bjy-cbhl-avatar{
+                                right: -10px;
+                                top: 0;                                    
+                                .bjy-cbhla-approve{
+                                    right: 37px;
+                                    top: 22px;
+                                }
+                                .bjy-cbhla-triangle{
+                                    right: 50px;
+                                    top: 10px;
+                                    background: url('/Public/statics/rongcloud/images/triangle-right-bjy.png') no-repeat;
+                                } 
+                            }     
+                            .bjy-cbhl-content{
+                                background: #d7efff;
+                            }                          
+                        }
+                    }
+                    .bjy-cb-middle{
+                        width: 490px;
+                        height: 30px;
+                        background: #eee;
+                        position: relative;
+                    }
+                    .bjy-cb-sendbox{
+                        width: 490px;
+                        height: 115px;
+                        .bjy-cbs-content{
+                            padding: 10px;
+                            width: 490px;
+                            line-height: 20px;
+                            font-size: 14px;
+                            border: none;
+                        }
+                    }
+                    .bjy-cb-handle{
+                        padding-left: 310px;
+                        padding-bottom: 25px;
+                        width: 490px;
+                        height: 30px;
+                        overflow: hidden;
+                        .bjy-cbh-close,.bjy-cbh-send{
+                            margin-left: 10px;
+                            width: 70px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            background: $background-color;
+                            font-size: 14px;
+                            color: #000;
+                            border-radius: 5px;
+                            float: left;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+
+}
+// 聊天框结束
