@@ -4,8 +4,9 @@ var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     babel       = require('gulp-babel'),
     uglify      = require('gulp-uglify'),
-    clearnHtml  = require("gulp-cleanhtml");
-    imagemin    = require('gulp-imagemin');
+    clearnHtml  = require("gulp-cleanhtml"),
+    imagemin    = require('gulp-imagemin'),
+    copy        = require('gulp-contrib-copy'),
     browserSync = require('browser-sync').create(),
     reload      = browserSync.reload;
     
@@ -43,6 +44,13 @@ gulp.task('html', function () {
 gulp.task('image', function () {
     gulp.src([src+'/**/*.+(jpg|jpeg|png|gif|bmp)'])
     .pipe(imagemin())
+    .pipe(gulp.dest(dist));
+});
+
+// 其他不编译的文件直接copy
+gulp.task('copy', function () {
+    gulp.src(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html)')
+    .pipe(copy())
     .pipe(gulp.dest(dist));
 });
 
