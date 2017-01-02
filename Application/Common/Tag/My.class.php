@@ -6,7 +6,7 @@ use Think\Template\TagLib;
 class My extends TagLib {
     // 定义标签
     protected $tags=array(
-        'jquery'=>array('attr'=>'','close'=>0),
+        'jquery'=>array('','close'=>0),
         'bootstrapcss'=>array('','close'=>0),
         'bootstrapjs'=>array('','close'=>0),
         'suicss'=>array('','close'=>0),
@@ -19,15 +19,15 @@ class My extends TagLib {
         'icheckjs'=>array('attr'=>'color','close'=>0),
         'datejs'=>array('attr'=>'id,color','close'=>0),
         'layer'=>array('attr'=>'id,color','close'=>0),
-        'animate'=>array('attr'=>'','close'=>0),
+        'animate'=>array('','close'=>0),
         'ueditor'=>array('attr'=>'name,content,height','close'=>0),
-        'umeditorcss'=>array('attr'=>'','close'=>0),
-        'umeditorjs'=>array('attr'=>'','close'=>0),
+        'umeditorcss'=>array('','close'=>0),
+        'umeditorjs'=>array('','close'=>0),
         'umeditor'=>array('attr'=>'name,content,height','close'=>0),
-        'webuploadercss'=>array('attr'=>'','close'=>0),
+        'webuploadercss'=>array('','close'=>0),
         'webuploader'=>array('attr'=>'name,url,word','close'=>0),
-        'webuploaderjs'=>array('attr'=>'','close'=>0),
-        'vue'=>array('attr'=>'','close'=>0)
+        'webuploaderjs'=>array('','close'=>0),
+        'vue'=>array('','close'=>0)
         );
 
     /**
