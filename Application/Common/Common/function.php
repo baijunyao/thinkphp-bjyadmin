@@ -1286,7 +1286,11 @@ function import_excel($file){
     // 判断文件是什么格式
     $type = pathinfo($file); 
     $type = strtolower($type["extension"]);
-    $type=$type==='csv' ? $type : 'Excel5';
+    if ($type=='xlsx') { 
+        $type='Excel2007'; 
+    }elseif($type=='xls') { 
+        $type = 'Excel5'; 
+    } 
     ini_set('max_execution_time', '0');
     Vendor('PHPExcel.PHPExcel');
     // 判断使用哪种格式
