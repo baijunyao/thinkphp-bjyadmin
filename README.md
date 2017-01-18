@@ -42,6 +42,7 @@
 9. [thinkphp把模板文件View独立出来](http://baijunyao.com/article/90)  
 10. [对照着jquery来学vue.js系列之配合thinkphp下拉获取分页数据](http://baijunyao.com/article/88)  
 11. [thinkphp安装引导程序](http://baijunyao.com/article/91)  
+12. [thinkphp整合系列之gulp实现前端自动化](http://baijunyao.com/article/103)  
 持续更新中...
 
 ## 使用说明
