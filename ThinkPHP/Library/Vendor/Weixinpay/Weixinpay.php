@@ -8,11 +8,18 @@ ini_set('date.timezone','Asia/Shanghai');
 
 class Weixinpay {
     // 定义配置项
-    private $config=array();
+    private $config=array(
+        'APPID'              => '', // 微信支付APPID
+        'MCHID'              => '', // 微信支付MCHID 商户收款账号
+        'KEY'                => '', // 微信支付KEY
+        'APPSECRET'          => '',  //公众帐号secert
+        'NOTIFY_URL'         => 'http://baijunyao.com/Api/WeixPay/notify/order_number/', // 接收支付状态的连接  改成自己的域名
+        );
 
     // 构造函数
     public function __construct(){
-        // 如果配置项为空 则直接返回
+        // 如果是在thinkphp中 那么需要补全/Application/Common/Conf/config.php中的配置
+        // 如果不是在thinkphp框架中使用；那么注释掉下面一行代码；直接补全 private $config 即可
         $this->config=C('WEIXINPAY_CONFIG');
     }
 
@@ -169,7 +176,7 @@ class Weixinpay {
             // 组合获取prepay_id的url
             $url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$config['APPID'].'&secret='.$config['APPSECRET'].'&code='.$code.'&grant_type=authorization_code';
             // curl获取prepay_id
-            $result=curl_get_contents($url);
+            $result=$this->curl_get_contents($url);
             $result=json_decode($result,true);
             $openid=$result['openid'];
             // 订单数据  请根据订单号out_trade_no 从数据库中查出实际的body、total_fee、out_trade_no、product_id
@@ -209,6 +216,22 @@ class Weixinpay {
         qrcode($decodeurl);
     }
 
+    /**
+     * curl 请求http
+     */
+    public function curl_get_contents($url){
+        $ch=curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
+        // curl_setopt($ch,CURLOPT_HEADER,1);               //是否显示头部信息
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
+        curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);   //用户访问代理 User-Agent
+        curl_setopt($ch, CURLOPT_REFERER,$_SERVER['HTTP_HOST']);        //设置 referer
+        curl_setopt($ch,CURLOPT_FOLLOWLOCATION,1);          //跟踪301
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);        //返回结果
+        $r=curl_exec($ch);
+        curl_close($ch);
+        return $r;
+    }
 
 
 
