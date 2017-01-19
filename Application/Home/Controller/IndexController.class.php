@@ -118,7 +118,7 @@ class IndexController extends HomeBaseController{
      * 融云用户1
      */
     public function user1(){
-        // 模拟id为89的用户的登陆过程
+        // 模拟id为89的用户的登录过程
         $user_data=M('Users')->field('id,username,avatar')->find(88);
         $_SESSION['user']=array(
             'id'=>$user_data['id'],
@@ -142,7 +142,7 @@ class IndexController extends HomeBaseController{
      * 融云用户2
      */
     public function user2(){
-        // 模拟id为89的用户的登陆过程
+        // 模拟id为89的用户的登录过程
         $user_data=M('Users')->field('id,username,avatar')->find(89);
         $_SESSION['user']=array(
             'id'=>$user_data['id'],

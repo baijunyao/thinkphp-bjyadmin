@@ -18,9 +18,9 @@ if (xbIsLogin) {
                 case RongIMLib.ConnectionStatus.DISCONNECTED:
                     console.log('断开连接');
                     break;
-                //其他设备登陆
+                //其他设备登录
                 case RongIMLib.ConnectionStatus.KICKED_OFFLINE_BY_OTHER_CLIENT:
-                    console.log('其他设备登陆');
+                    console.log('其他设备登录');
                     break;
                   //网络不可用
                 case RongIMLib.ConnectionStatus.NETWORK_UNAVAILABLE:
