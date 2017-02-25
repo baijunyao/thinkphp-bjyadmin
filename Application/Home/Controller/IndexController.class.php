@@ -260,7 +260,10 @@ class IndexController extends HomeBaseController{
      * 用来做测试用
      */
     public function test(){
-        
+        p($_SESSION);
+        die;
+        echo C('SESSION_OPTIONS.expire',10);
+        session('test','222');
     }
 
 
