@@ -43,6 +43,7 @@
 10. [对照着jquery来学vue.js系列之配合thinkphp下拉获取分页数据](http://baijunyao.com/article/88)  
 11. [thinkphp安装引导程序](http://baijunyao.com/article/91)  
 12. [thinkphp整合系列之gulp实现前端自动化](http://baijunyao.com/article/103)  
+13. [开源项目系列之 thinkphp-bjyblog 博客](http://baijunyao.com/article/104)  
 持续更新中...
 
 ## 使用说明
