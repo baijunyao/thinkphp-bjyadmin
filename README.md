@@ -28,6 +28,7 @@
 14. [thinkphp整合系列之极验滑动验证码](http://baijunyao.com/article/79)  
 15. [thinkphp整合系列之webuploader异步预览上传](http://baijunyao.com/article/80)  
 16. [thinkphp整合系列之phpexcel导入excel数据](http://baijunyao.com/article/82)  
+17. [thinkphp整合系列之苹果AppStore内购付款的服务器端php验证](http://baijunyao.com/article/106)  
 持续更新中...
 
 ## 相关文章
@@ -45,7 +46,6 @@
 12. [thinkphp整合系列之gulp实现前端自动化](http://baijunyao.com/article/103)  
 13. [开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
 14. [开源项目系列之thinkphp-bjyadmin各种功能扩展](http://baijunyao.com/article/105)  
-15. [thinkphp整合系列之苹果AppStore内购付款的服务器端php验证](http://baijunyao.com/article/106)  
 持续更新中...
 
 ## 使用说明
