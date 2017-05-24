@@ -9,6 +9,7 @@
 
 <form action="{:U('Home/Index/webuploader')}" method="post">
     <webuploader name="image" url="{:U('Home/Index/ajax_upload')}" word="或将照片拖到这里，单次最多可选300张" />
+    <webuploader name="image2" url="{:U('Home/Index/ajax_upload')}" word="或将照片拖到这里，单次最多可选300张" />
     自定义附加字段：<input type="text" name="extend" value="上传的文件描述">
     <input type="submit" value="提交">
 </form>
