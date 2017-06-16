@@ -16,6 +16,12 @@ class AdminBaseController extends BaseController{
 		if(!$result){
 			$this->error('您没有权限访问');
 		}
+		// 分配菜单数据
+		$nav_data=D('AdminNav')->getTreeData('level','order_number,id');
+		$assign=array(
+			'nav_data'=>$nav_data
+			);
+		$this->assign($assign);
 	}
 
 
