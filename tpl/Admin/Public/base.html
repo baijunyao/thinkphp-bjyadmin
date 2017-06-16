@@ -2,6 +2,9 @@
         #sidebar .nav-list{
             overflow-y: auto;
         }
+        .b-nav-li{
+            padding: 5px 0;
+        }
     </style><block name="css"></block></head><body><div class="navbar navbar-default" id="navbar"><script type="text/javascript">
         try{ace.settings.check('navbar' , 'fixed')}catch(e){}
     </script><div class="navbar-container" id="navbar-container"><div class="navbar-header pull-left"><a href="#" class="navbar-brand"><small><i class="icon-leaf"></i> bjyadmin管理后台</small></a></div><div class="navbar-header pull-right" role="navigation"><ul class="nav ace-nav"><li class="light-blue"> <a data-toggle="dropdown" href="#" class="dropdown-toggle"><img class="nav-user-photo" src="__ADMIN_ACEADMIN__/avatars/user.jpg" alt="Jason's Photo"/> <span class="user-info"><small>欢迎光临,</small> {$_SESSION['user']['username']}</span><i class="icon-caret-down"></i></a><ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close"><li class="divider"></li><li><a href="{:U('Home/Index/logout')}"><i class="icon-off"></i> 退出</a></li></ul></li></ul></div></div></div><div class="main-container" id="main-container"><script type="text/javascript">
