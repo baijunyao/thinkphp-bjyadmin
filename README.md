@@ -11,6 +11,14 @@
 ## 说明
 此开源产品面向所有thinkphp开发用户；因为我的基本思想是不改动框架的源文件；只是围绕着框架扩展；所以整合的这些功能都可以无痛兼容各种环境；既可以按照文章将整合的这些功能方便的移植到你已有的项目中；也可以直接以此项目为基础开发；
 
+## 安装使用
+1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；跟目录下已经有项目了？windows 环境参考[wamp 配置虚拟主机](http://baijunyao.com/article/62) ；linux环境参考[Linux 环境下 Apache 配置多个虚拟主机挂载多站点同时运行](http://baijunyao.com/article/9)
+2. 初次运行访问会进入安装程序；自动创建配置项和数据库；
+3. 安装失败了？那肯定是人品问题了；找个墙角面壁思过；然后参考[开源项目系列之 thinkphp-bjyblog 博客](http://baijunyao.com/article/104)的第2部分
+4. 默认用户名：admin   密码：123456
+5. 基础功能的使用参考[官网文档](http://document.thinkphp.cn/manual_3_2.html)
+6. 附件功能参考下面这些文章
+
 ## 系列文章
 1. [thinkphp整合系列之短信验证码、订单通知](http://baijunyao.com/article/66)
 2. [thinkphp整合系列之rbac的升级版auth权限管理系统demo](http://baijunyao.com/article/67)
@@ -47,10 +55,6 @@
 13. [开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
 14. [开源项目系列之thinkphp-bjyadmin各种功能扩展](http://baijunyao.com/article/105)  
 持续更新中...
-
-## 使用说明
-1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/bjyadmin/ ；
-2. 默认用户名：admin   密码：123456
 
 ## 针对thinkphp的改进优化；
 1. 修复tinkphp的session设置周期无效的bug；
