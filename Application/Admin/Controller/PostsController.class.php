@@ -9,7 +9,7 @@ class PostsController extends AdminBaseController{
      * 文章列表
      */
     public function index(){
-        echo '文章列表';
+        $this->display();
     }
 
 }
