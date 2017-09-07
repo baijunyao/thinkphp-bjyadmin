@@ -121,7 +121,7 @@
                 <foreach name="nav_data" item="v">
                     <empty name="v['_data']">
                         <li class="b-nav-li">
-                            <a href="{:U($v['mca'])}" target="right_content">
+                            <a href="{:U($v['mca'])}">
                                 <i class="fa fa-{$v['ico']} icon-test"></i>
                                 <span class="menu-text"> {$v['name']} </span>
                             </a>
@@ -137,7 +137,7 @@
                             <ul class="submenu">
                                 <foreach name="v['_data']" item="n">
                                     <li class="b-nav-li">
-                                        <a href="{:U($n['mca'])}" target="right_content">
+                                        <a href="{:U($n['mca'])}">
                                             <i class="icon-double-angle-right"></i>
                                             {$n['name']}
                                         </a>

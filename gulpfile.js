@@ -57,7 +57,7 @@ gulp.task('copy', function () {
 // 自动刷新
 gulp.task('server', function() {
     browserSync.init({
-        proxy: "tbjyadmin.com", // 指定代理url
+        proxy: "thinkphp-bjyadmin.dev", // 指定代理url
         notify: false, // 刷新不弹出提示
     });
     // 监听scss文件编译
