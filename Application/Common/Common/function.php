@@ -1301,14 +1301,18 @@ function import_excel($file){
     $highestRow = $sheet->getHighestRow();     
     // 取得总列数      
     $highestColumn = $sheet->getHighestColumn(); 
+    //总列数转换成数字
+    $numHighestColum = PHPExcel_Cell::columnIndexFromString("$highestColumn");
     //循环读取excel文件,读取一条,插入一条
     $data=array();
     //从第一行开始读取数据
     for($j=1;$j<=$highestRow;$j++){
         //从A列读取数据
-        for($k='A';$k<=$highestColumn;$k++){
+        for($k=0;$k<=$numHighestColum;$k++){
+            //数字列转换成字母
+            $columnIndex = PHPExcel_Cell::stringFromColumnIndex($k);
             // 读取单元格
-            $data[$j][]=$objPHPExcel->getActiveSheet()->getCell("$k$j")->getValue();
+            $data[$j][]=$objPHPExcel->getActiveSheet()->getCell("$columnIndex$j")->getValue();
         } 
     }  
     return $data;
