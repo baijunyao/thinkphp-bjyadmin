@@ -222,7 +222,7 @@ php;
     */
    public function _umeditorcss(){
         $link=<<<php
-<link rel="stylesheet" href="/Public/statics/umeditor1_2_2/themes/default/css/umeditor.css">
+<link rel="stylesheet" href="/Public/statics/umeditor1_2_3/themes/default/css/umeditor.css">
 php;
         return $link;
    }
@@ -231,9 +231,9 @@ php;
     */
    public function _umeditorjs(){
         $link=<<<php
-<script src="/Public/statics/umeditor1_2_2/umeditor.config.js"></script>
-<script src="/Public/statics/umeditor1_2_2/umeditor.js"></script>
-<script src="/Public/statics/umeditor1_2_2/lang/zh-cn/zh-cn.js"></script>
+<script src="/Public/statics/umeditor1_2_3/umeditor.config.js"></script>
+<script src="/Public/statics/umeditor1_2_3/umeditor.js"></script>
+<script src="/Public/statics/umeditor1_2_3/lang/zh-cn/zh-cn.js"></script>
 php;
         return $link;
    }
