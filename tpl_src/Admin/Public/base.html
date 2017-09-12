@@ -136,7 +136,7 @@
                             </a>
                             <ul class="submenu">
                                 <foreach name="v['_data']" item="n">
-                                    <li class="b-nav-li">
+                                    <li class="b-nav-li <if condition="(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME) eq $n['mca']">active</if>">
                                         <a href="{:U($n['mca'])}">
                                             <i class="icon-double-angle-right"></i>
                                             {$n['name']}
@@ -210,6 +210,11 @@
 <script src="__ADMIN_ACEADMIN__/js/ace.min.js"></script>
 <script src="__PUBLIC_JS__/base.js"></script>
 <block name="js"></block>
+<script>
+    $(function(){
+        $('.b-has-child .active').parents('.b-has-child').eq(0).find('.b-nav-parent').click();
+    })
+</script>
 </body>
 </html>
 
