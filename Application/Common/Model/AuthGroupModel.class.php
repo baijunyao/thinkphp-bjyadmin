@@ -12,13 +12,15 @@ class AuthGroupModel extends BaseModel{
 	 * @return boolean       操作是否成功
 	 */
 	public function deleteData($map){
-		$this->where($map)->delete();
-		$group_map=array(
+		$result=$this->where($map)->delete();
+		if ($result) {
+			$group_map=array(
 			'group_id'=>$map['id']
 			);
-		// 删除关联表中的组数据
-		$result=D('AuthGroupAccess')->deleteData($group_map);
-		return $result;
+			// 删除关联表中的组数据
+			$result=D('AuthGroupAccess')->deleteData($group_map);
+		}
+		return true;
 	}
 
 

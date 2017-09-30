@@ -112,7 +112,7 @@ class RuleController extends AdminBaseController{
      * 删除用户组
      */
     public function delete_group(){
-        $id=I('get.id');
+        $id=I('get.id',0,'intval');
         $map=array(
             'id'=>$id
             );
