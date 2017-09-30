@@ -15,7 +15,7 @@ class AuthGroupModel extends BaseModel{
 		$result=$this->where($map)->delete();
 		if ($result) {
 			$group_map=array(
-			'group_id'=>$map['id']
+				'group_id'=>$map['id']
 			);
 			// 删除关联表中的组数据
 			$result=D('AuthGroupAccess')->deleteData($group_map);
