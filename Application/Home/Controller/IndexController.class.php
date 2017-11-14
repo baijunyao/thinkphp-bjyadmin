@@ -47,6 +47,9 @@ class IndexController extends HomeBaseController{
      */
     public function send_email(){
         $email=I('post.email');
+        if ($email=='baijunyao@baijunyao.com') {
+            die('请修改邮箱地址已接收测试邮件');
+        }
         $result=send_email($email,'邮件标题','邮件内容');
         if ($result['error']==1) {
             p($result);die;
