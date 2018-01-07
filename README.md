@@ -19,7 +19,7 @@
 3. 安装失败了？那肯定是人品问题了；找个墙角面壁思过；然后参考[开源项目系列之 thinkphp-bjyblog 博客](http://baijunyao.com/article/104)的第2部分
 4. 默认用户名：admin   密码：123456
 5. 基础功能的使用参考[官网文档](http://document.thinkphp.cn/manual_3_2.html)
-6. 附件功能参考下面这些文章
+6. 附加功能参考下面这些文章
 
 ## 系列文章
 1. [thinkphp整合系列之短信验证码、订单通知](http://baijunyao.com/article/66)
