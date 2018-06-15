@@ -2,8 +2,8 @@
 
 ## 链接
 - 博客：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyadmin   
-- oschina：http://git.oschina.net/shuaibai123/thinkphp-bjyadmin   
+- github: https://github.com/baijunyao/thinkphp-bjyadmin   
+- gitee: http://gitee.com/baijunyao/thinkphp-bjyadmin   
 
 ## 简介
 使用thinkphp开发项目的过程中把一些常用的功能或者第三方sdk整合好；开源供亲们参考;
